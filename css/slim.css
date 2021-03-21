@@ -1,0 +1,87 @@
+@CHARSET "ISO-8859-1";
+/* CodNet Form Embed Code - Slim - 11/10/2012 */
+
+body {
+	padding:0;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#666;
+	margin-top: 0;
+	margin-right: 0;
+	margin-bottom: 0px;
+	margin-left: 0;
+}
+#structure {
+	border-collapse:collapse;
+	width:100%;
+}
+
+#content {
+	top:50px;
+	left:25%;
+	position:absolute;
+	vertical-align:top;
+	padding:0;
+	background:url(images/subscription.jpg) no-repeat;
+	height:100%;;
+	width:50%;
+	min-width: 663px;
+}
+
+INPUT[type=button],INPUT[type=submit],INPUT[type=reset] { /*	
+	border-bottom: 2px solid #555555;
+	border-right: 2px solid #555555;
+	border-top: 2px solid #ffffff;
+	border-left: 2px solid #ffffff;
+	font-size: 11px;
+	width: auto;
+	cursor: hand;
+	color: #ffffff;
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #31659c
+                                                          */
+                                                          -moz-border-radius: 3px 3px 3px 3px;
+                                                          background: none repeat scroll 0 0 #384E67;
+                                                          border: medium none;
+                                                          color: #FFFFFF;
+                                                          /*float: left;*/
+                                                          font-family: Arial, helvetica, sans-serif;
+                                                          font-size: 11px;
+                                                          font-weight: bold;
+                                                          height: 22px;
+                                                          line-height: 22px;
+                                                          margin: 0 5px 0 0;
+                                                          padding-bottom: 1px;
+                                                          padding-top: 0;
+                                                          white-space: nowrap;
+                                                          cursor: hand;
+}
+
+INPUT[type=button]:hover,INPUT[type=submit]:hover,INPUT[type=reset]:hover
+{
+    cursor: pointer;
+    background: #001e40;
+}
+
+/* CodNet Form Embed Code - Slim - 11/10/2012 */
+#cdt_embed_signup form {display:block; position:relative; text-align:left; padding:10px 0 10px 3%}
+#cdt_embed_signup h2 {font-weight:bold; padding:0; margin:15px 0; font-size:1.4em;}
+#cdt_embed_signup input {border:1px solid #999; -webkit-appearance:none;}
+#cdt_embed_signup input[type=checkbox]{-webkit-appearance:checkbox;}
+#cdt_embed_signup input[type=radio]{-webkit-appearance:radio;}
+#cdt_embed_signup input:focus {border-color:#333;}
+#cdt_embed_signup .button {clear:both; background-color: #aaa; border: 0 none; border-radius:4px; color: #FFFFFF; cursor: pointer; display: inline-block; font-size:15px; font-weight: bold; height: 32px; line-height: 32px; margin: 0 5px 10px 0; padding:0; text-align: center; text-decoration: none; vertical-align: top; white-space: nowrap; width: auto;}
+#cdt_embed_signup .button:hover {background-color:#777;}
+#cdt_embed_signup .small-meta {font-size: 11px;}
+#cdt_embed_signup .nowrap {white-space:nowrap;}     
+#cdt_embed_signup .clear {clear:none; display:inline;}
+
+#cdt_embed_signup label {display:block; font-size:16px; padding-bottom:10px; font-weight:bold;}
+#cdt_embed_signup input.email {display:block; padding:8px 0; margin:0 4% 10px 0; text-indent:5px; width:58%; min-width:130px;}
+#cdt_embed_signup input.button {display:block; width:35%; margin:0 0 10px 0; min-width:90px;}
+
+#cdt_embed_signup div#cdte-responses {float:left; top:-1.4em; padding:0em .5em 0em .5em; overflow:hidden; width:90%;margin: 0 5%; clear: both;}
+#cdt_embed_signup div.response {margin:1em 0; padding:1em .5em .5em 0; font-weight:bold; float:left; top:-1.5em; z-index:1; width:80%;}
+#cdt_embed_signup #cdte-error-response {display:none;}
+#cdt_embed_signup #cdte-success-response {color:#529214; display:none;}
+#cdt_embed_signup label.error {display:block; float:none; width:auto; margin-left:1.05em; text-align:left; padding:.5em 0;}

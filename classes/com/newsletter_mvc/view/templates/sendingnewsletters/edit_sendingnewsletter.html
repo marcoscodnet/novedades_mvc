@@ -1,0 +1,75 @@
+<!-- BEGIN:main -->
+
+
+<script language="javascript" src="{WEB_PATH}js/autocomplete/simpleAutoComplete.js"></script>
+<link rel="stylesheet" href="{WEB_PATH}css/autocomplete/simpleAutoComplete.css" type="text/css" />
+
+
+
+<div id="editar">
+	<div align="justify"><p class="titulo">{title}</p></div>
+
+	<!-- BEGIN:msg -->
+	<div class="ui-state-error ui-corner-all" style="margin-top: 20px; padding: 0 .7em;"> 
+		<p><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
+			{msg}
+		</p>
+	</div>
+	<br />
+	<!-- END:msg -->
+
+	<form name='editsendingNewsletter' id='editsendingNewsletter' action='doAction?action={submit}' method='post' onsubmit="return validate('editsendingNewsletter');">
+		
+		<table>
+			<tr>
+				<td align="right">{cd_sending_newsletter_label}:</td>
+				<td align="left">
+					{cd_sending_newsletter}
+					<input type="hidden" readonly name="cd_sending_newsletter" id="cd_sending_newsletter" value="{cd_sending_newsletter}"/>
+				</td>
+			</tr>
+			
+			<tr>
+				<td align="right">{cd_newsletter_label}  {cd_newsletter_required}</td>
+				<td align="left">
+					<input type='text' name='cd_newsletter' id='cd_newsletter' size='40' value="{cd_newsletter}" jVal="{valid:function (val) { return required(val,' {cd_newsletter_required_msg}'); }}"/>
+				</td>
+			</tr>
+			
+			<tr>
+				<td align="right">{dt_date_label}  {dt_date_required}</td>
+				<td align="left">
+					<input type='text' name='dt_date' id='dt_date' size='40' value="{dt_date}" jVal="{valid:function (val) { return required(val,' {dt_date_required_msg}'); }}"/>
+				</td>
+			</tr>
+			
+			<tr>
+				<td align="right">{ds_time_label}  {ds_time_required}</td>
+				<td align="left">
+					<input type='text' name='ds_time' id='ds_time' size='40' value="{ds_time}" jVal="{valid:function (val) { return required(val,' {ds_time_required_msg}'); }}"/>
+				</td>
+			</tr>
+			
+						
+			<tr>
+				<td align="right">{bl_sent_label}</td>
+				<td align="left">
+					<input type='text' name='bl_sent' id='bl_sent' size='40' value="{bl_sent}"/>
+				</td>
+			</tr>
+			
+			
+			
+			
+		</table>
+		
+		<p style="text-align:center">
+			<input type='submit' name='{lbl_save}' value='{lbl_save}'/>
+			<input type='reset' name='{lbl_cancel}' value='{lbl_cancel}' onclick="javascript:window.location.href= 'doAction?action=list_sendingnewsletters';"/>
+		</p>
+		
+		
+	</form>		
+	<div class="camposRequeridos">(*) {msg_required_fields}</div>
+</div>
+<!-- END:main -->

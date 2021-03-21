@@ -1,0 +1,62 @@
+<!-- BEGIN:main -->
+
+
+<script language="javascript" src="{WEB_PATH}js/autocomplete/simpleAutoComplete.js"></script>
+<link rel="stylesheet" href="{WEB_PATH}css/autocomplete/simpleAutoComplete.css" type="text/css" />
+
+<script type="text/javascript">
+function category_change(attr){
+	
+}
+</script>
+
+<div id="editar">
+	<div align="justify"><p class="titulo">{title}</p></div>
+
+	<!-- BEGIN:msg -->
+	<div class="ui-state-error ui-corner-all" style="margin-top: 20px; padding: 0 .7em;"> 
+		<p><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
+			{msg}
+		</p>
+	</div>
+	<br />
+	<!-- END:msg -->
+	
+	
+
+
+
+	<form name='inmportcontact' id='inmportcontact' action='doAction?action={submit}' method='post' onsubmit="return validate('inmportcontact');" enctype="multipart/form-data">
+		
+		<table>
+			<tr>
+				<td align="right">{cd_category_label}: {cd_category_required}</td>
+				<td align="left">
+					{Category_find}
+				</td>
+			</tr>
+			
+			<tr>
+				<td align="right">{ds_file_label}:  {ds_file_required}</td>
+				<td align="left">
+					<span style='color: #FF0000'>En el archivo debe haber un contacto por l&iacute;nea con el siguiente formato: Nombre;E-Mail;Direcci&oacute;n;Tel&eacute;fono;Celular;F. Nacimiento;Empresa </em></span>
+					<input type='file' name='ds_file' id='ds_file' size='60' jVal="{valid:function (val) { return required(val,' {ds_file_required_msg}'); }}"/>
+				</td>
+			</tr>
+			
+			
+			
+			
+			
+		</table>
+		
+		<p style="text-align:center">
+			<input type='submit' name='{lbl_save}' value='{lbl_save}'/>
+			<input type='reset' name='{lbl_cancel}' value='{lbl_cancel}' onclick="javascript:window.location.href= 'doAction?action=list_contacts';"/>
+		</p>
+		
+		
+	</form>		
+	<div class="camposRequeridos">(*) {msg_required_fields}</div>
+</div>
+<!-- END:main -->

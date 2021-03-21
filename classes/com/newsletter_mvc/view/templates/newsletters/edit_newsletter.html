@@ -1,0 +1,167 @@
+<!-- BEGIN:main -->
+
+
+<script language="javascript" src="{WEB_PATH}js/autocomplete/simpleAutoComplete.js"></script>
+<link rel="stylesheet" href="{WEB_PATH}css/autocomplete/simpleAutoComplete.css" type="text/css" />
+<script type="text/javascript" src="{WEB_PATH}libs/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="{WEB_PATH}libs/ckeditor/adapters/jquery.js"></script>	
+
+
+<script type="text/javascript">
+
+$(function() {
+    $("#dt_date").datepicker({ dateFormat: 'dd/mm/yy' });
+});
+function cdt_user_change(attr){
+	
+}
+window.onload = function() {
+	
+	/*CKEDITOR.replace('ds_text',{toolbar:'Newsletter',width:'600',height:'300',filebrowserBrowseUrl : '{WEB_PATH}libs/ckeditor/filemanager/browser/default/browser.html?Connector={WEB_PATH}libs/ckeditor/filemanager/connectors/php/connector.php?Type=Image',
+		  filebrowserWindowWidth : '640',
+		  filebrowserWindowHeight : '500'});*/
+	
+	
+
+	
+	
+
+}
+{viewTemp}	
+</script>
+
+<script type="text/javascript">
+function template_change(attr){
+	
+}
+</script>
+
+<script type="text/javascript">
+function status_change(attr){
+	
+}
+</script>
+
+<div id="editar">
+	<div align="justify"><p class="titulo">{title}</p></div>
+
+	<!-- BEGIN:msg -->
+	<div class="ui-state-error ui-corner-all" style="margin-top: 20px; padding: 0 .7em;"> 
+		<p><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
+			{msg}
+		</p>
+	</div>
+	<br />
+	<!-- END:msg -->
+
+	<form name='editnewsletter' id='editnewsletter' action='doAction?action={submit}' method='post' onsubmit="return validate('editnewsletter');">
+		
+		<table>
+			<tr>
+				<td align="right">{cd_newsletter_label}:</td>
+				<td align="left">
+					{cd_newsletter}
+					<input type="hidden" readonly name="processed" id="processed" value="{processed}"/>
+					<input type="hidden" readonly name="cd_newsletter" id="cd_newsletter" value="{cd_newsletter}"/>
+					<input type="hidden" readonly name="cd_status" id="cd_status" value="{cd_status}"/>
+					<input type="hidden" readonly name="cd_template" id="cd_template" value="{cd_template}"/>
+					<input type="hidden" readonly name="imgHeader" id="imgHeader" value="{imgHeader}"/>
+					<input type="hidden" readonly name="imgFooter" id="imgFooter" value="{imgFooter}"/>
+					<input type="hidden" readonly name="bl_twitter" id="bl_twitter" value="0"/>
+					<input type="hidden" readonly name="bl_facebook" id="bl_facebook" value="0"/>
+					<input type="hidden" readonly name="bl_linkedin" id="bl_linkedin" value="0"/>
+				</td>
+			</tr>
+			
+			<tr>
+				<td align="right">{dt_date_label}  {dt_date_required}</td>
+				<td align="left">
+					<input type='text' name='dt_date' id='dt_date' size='40' value="{dt_date}" jVal="{valid:function (val) { return required(val,' {dt_date_required_msg}'); }}"/>
+				</td>
+			</tr>
+		
+			
+						
+			<tr>
+				<td align="right">{ds_newsletter_label} {ds_newsletter_required}</td>
+				<td align="left">
+					<input type='text' name='ds_newsletter' id='ds_newsletter' size='40' value="{ds_newsletter}" jVal="{valid:function (val) { return required(val,' {ds_newsletter_required_msg}'); }}"/>
+				</td>
+			</tr>
+					
+			<tr>
+				<td align="right">{ds_mail_label} {ds_mail_required}</td>
+				<td align="left">
+					<input type='text' name='ds_mail' id='ds_mail' size='40' value="{ds_mail}" jVal="{valid:function (val) { return required(val,' {ds_mail_required_msg}') + isMail(val,' {da_mail_mail_msg}'); }}"/>
+				</td>
+			</tr>		
+			<!-- <tr>
+				<td align="right">{bl_twitter_label}</td>
+				<td align="left">
+					
+					<input type='checkbox' name='bl_twitter' id='bl_twitter' value="1" {checked_bl_twitter}/>
+				</td>
+			</tr>
+			
+			<tr>
+				<td align="right">{bl_facebook_label}</td>
+				<td align="left">
+					
+					<input type='checkbox' name='bl_facebook' id='bl_facebook' value="1" {checked_bl_facebook}/>
+				</td>
+			</tr>
+			<tr>
+				<td align="right">{bl_linkedin_label}</td>
+				<td align="left">
+					
+					<input type='checkbox' name='bl_linkedin' id='bl_linkedin' value="1" {checked_bl_linkedin}/>
+				</td>
+			</tr>	
+			<tr>
+				<td align="right">{ds_linkheader_label} {ds_linkheader_required}</td>
+				<td align="left">
+					<input type='text' name='ds_linkheader' id='ds_linkheader' size='40' value="{ds_linkheader}" jVal="{valid:function (val) { return isURL(val,' {ds_linkheader_url_msg}'); }}"/>
+				</td>
+			</tr>
+			<tr>
+				<td align="right">{ds_linkfooter_label} {ds_linkfooter_required}</td>
+				<td align="left">
+					<input type='text' name='ds_linkfooter' id='ds_linkfooter' size='40' value="{ds_linkfooter}" jVal="{valid:function (val) { return isURL(val,' {ds_linkheader_url_msg}'); }}"/>
+				</td>
+			</tr>		
+			<tr>
+				<td align="right">{ds_text_label}</td>
+				<td align="left">
+					<span style='color: #FF0000'>(*){ds_speech}</span>
+					<textarea name="ds_text" id="ds_text" cols="50" rows="30" />{ds_text}</textarea>
+				</td>
+			</tr> -->
+						
+		
+						
+				
+			
+			
+			
+			
+						
+			
+						
+			
+			
+		</table>
+		
+		<p style="text-align:center">
+			<input type='submit' name='{name_preview}' value='{lbl_preview}'/>
+			<input type='submit' name='{lbl_save}' value='{lbl_save}'/>
+			
+			<input type='reset' name='{lbl_cancel}' value='{lbl_cancel}' onclick="javascript:window.location.href= 'doAction?action=list_newsletters';"/>
+		</p>
+		
+		
+	</form>		
+	<div class="camposRequeridos">(*) {msg_required_fields}</div>
+</div>
+
+
+<!-- END:main -->

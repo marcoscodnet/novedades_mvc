@@ -1,0 +1,20 @@
+<!-- BEGIN:main -->
+<!-- BEGIN: css -->
+<link type="text/css" rel="stylesheet" href="{css}">
+<!-- END: css -->
+<!-- BEGIN: script -->
+<script language="javascript" src="{js}"></script>
+<!-- END: script -->
+<style type="text/css">
+#cdt_embed_signup{ clear:left; font:14px Arial,sans-serif; }
+</style>
+<div id="cdt_embed_signup">
+<form id="cdt-embedded-subscribe-form" name="cdt-embedded-subscribe-form" action="{web_path}doAction?action=update_susbcription" method="post" target="_blank" onsubmit="return validate('cdt-embedded-subscribe-form');">
+<input id="cd_category" type="hidden" value="{cd_category}" name="cd_category">
+<label for="cdte-EMAIL">{ds_title}</label>
+
+<input name="ds_mail" type="text" id="cdte-EMAIL" value="" class="email" placeholder="E-mail" jVal="{valid:function (val) { return required(val,' {ds_mail_required_msg}') + isMail(val,' {ds_mail_mail_msg}'); }}"/>
+<div class="clear"><input type="submit" value="{lbl_subscription}" name="{lbl_subscription}" id="cdt-embedded-subscribe" class="button"/></div></form></div>
+
+
+<!-- END:main -->

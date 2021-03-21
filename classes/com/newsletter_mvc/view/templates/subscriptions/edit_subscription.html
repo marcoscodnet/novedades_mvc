@@ -1,0 +1,94 @@
+<!-- BEGIN:main -->
+
+
+<script language="javascript" src="{WEB_PATH}js/autocomplete/simpleAutoComplete.js"></script>
+<link rel="stylesheet" href="{WEB_PATH}css/autocomplete/simpleAutoComplete.css" type="text/css" />
+
+<script type="text/javascript">
+function category_change(attr){
+	
+}
+</script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        // definimos las opciones del plugin AJAX FORM
+        var options= {
+        		beforeSubmit: function() {
+            		return validate('editsubscription');                           
+            		},
+            success: showResponse //funcion que se ejecuta una vez enviado el formulario
+        };
+        //asignamos el plugin ajaxForm al formulario myForm y le pasamos las opciones
+        $('#editsubscription').ajaxForm(options);
+        function showResponse (responseText){
+        
+            document.getElementById("ds_text").value = responseText;
+            document.getElementById("ds_text").select();	
+            
+        };      
+    });
+</script>
+<div id="editar">
+	<div align="justify"><p class="titulo">{title}</p></div>
+
+	<!-- BEGIN:msg -->
+	<div class="ui-state-error ui-corner-all" style="margin-top: 20px; padding: 0 .7em;"> 
+		<p><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
+			{msg}
+		</p>
+	</div>
+	<br />
+	<!-- END:msg -->
+	
+	
+
+
+
+	<form name='editsubscription' id='editsubscription' action='doAction?action={submit}' method='post' onsubmit="return validate('editsubscription');">
+		
+		<table>
+			<tr>
+				<td align="right">{cd_category_label}: {cd_category_required}</td>
+				<td align="left">
+					{Category_find}
+				</td>
+			</tr>
+			
+			<tr>
+				<td align="right">{ds_title_label}:  {ds_title_required}</td>
+				<td align="left">
+					<input type='text' name='ds_title' id='ds_title' size='40' value="{ds_title}" jVal="{valid:function (val) { return required(val,' {ds_title_required_msg}'); }}"/>
+				</td>
+			</tr>
+			<tr>
+				<td align="right"></td>
+				<td align="left">
+					<input type='submit' name='{lbl_generate_code_name}' id='{lbl_generate_code_name}' value='{lbl_generate_code}'/>
+				</td>
+			</tr>
+			<tr>
+				<td align="right">{ds_text_label}:  </td>
+				<td align="left">
+					<span style='color: #FF0000'>{ds_speech}</span>
+		<textarea id="ds_text" name="ds_text" rows="15" cols="80" style="width: 80%">
+	{ds_text}
+	</textarea>
+				</td>
+			</tr>
+			
+			
+			
+			
+			
+		</table>
+		
+		<p style="text-align:center">
+			<!--   <input type='submit' name='{lbl_save}' value='{lbl_save}'/> -->
+			<input type='reset' name='{lbl_cancel}' value='{lbl_cancel}' onclick="javascript:window.location.href= 'doAction?action=home';"/>
+		</p>
+		
+		
+	</form>		
+	<div class="camposRequeridos">(*) {msg_required_fields}</div>
+</div>
+<!-- END:main -->

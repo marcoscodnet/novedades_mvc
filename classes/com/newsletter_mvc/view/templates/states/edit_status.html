@@ -1,0 +1,54 @@
+<!-- BEGIN:main -->
+
+
+<script language="javascript" src="{WEB_PATH}js/autocomplete/simpleAutoComplete.js"></script>
+<link rel="stylesheet" href="{WEB_PATH}css/autocomplete/simpleAutoComplete.css" type="text/css" />
+
+
+
+<div id="editar">
+	<div align="justify"><p class="titulo">{title}</p></div>
+
+	<!-- BEGIN:msg -->
+	<div class="ui-state-error ui-corner-all" style="margin-top: 20px; padding: 0 .7em;"> 
+		<p><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
+			{msg}
+		</p>
+	</div>
+	<br />
+	<!-- END:msg -->
+
+	<form name='editstatus' id='editstatus' action='doAction?action={submit}' method='post' onsubmit="return validate('editstatus');">
+		
+		<table>
+			<tr>
+				<td align="right">{cd_status_label}:</td>
+				<td align="left">
+					{cd_status}
+					<input type="hidden" readonly name="cd_status" id="cd_status" value="{cd_status}"/>
+				</td>
+			</tr>
+			
+			<tr>
+				<td align="right">{ds_status_label}  {ds_status_required}</td>
+				<td align="left">
+					<input type='text' name='ds_status' id='ds_status' size='40' value="{ds_status}" jVal="{valid:function (val) { return required(val,' {ds_status_required_msg}'); }}"/>
+				</td>
+			</tr>
+			
+			
+			
+			
+			
+		</table>
+		
+		<p style="text-align:center">
+			<input type='submit' name='{lbl_save}' value='{lbl_save}'/>
+			<input type='reset' name='{lbl_cancel}' value='{lbl_cancel}' onclick="javascript:window.location.href= 'doAction?action=list_states';"/>
+		</p>
+		
+		
+	</form>		
+	<div class="camposRequeridos">(*) {msg_required_fields}</div>
+</div>
+<!-- END:main -->

@@ -1,0 +1,190 @@
+<!-- BEGIN:main -->
+
+
+<script language="javascript" src="{WEB_PATH}js/autocomplete/simpleAutoComplete.js"></script>
+<link rel="stylesheet" href="{WEB_PATH}css/autocomplete/simpleAutoComplete.css" type="text/css" />
+<script type="text/javascript">
+$(function() {
+    $("#dt_birthday").datepicker({ dateFormat: 'dd/mm/yy' });
+});
+
+</script>
+<script type="text/javascript">
+function category_change(attr){
+	
+}
+</script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        // definimos las opciones del plugin AJAX FORM
+        var options= {
+        		beforeSubmit: function() {
+            		return validate('editcategory');                           
+            		},
+            success: showResponse //funcion que se ejecuta una vez enviado el formulario
+        };
+        //asignamos el plugin ajaxForm al formulario myForm y le pasamos las opciones
+        $('#editcategory').ajaxForm(options);
+        function showResponse (responseText){
+        
+            document.getElementById("rta_categories").innerHTML = responseText;
+            /*document.getElementById("ds_offer").value = document.getElementById("rtaPrefix").innerHTML;
+            document.getElementById("ds_ivdaprefix").value = document.getElementById("ivdaPrefix").innerHTML;*/
+            $("#cd_category").val("");
+            $("#cd_category").blur();
+        };      
+    });
+</script>
+
+<div id="editar">
+	<div align="justify"><p class="titulo">{title}</p></div>
+
+	<!-- BEGIN:msg -->
+	<div class="ui-state-error ui-corner-all" style="margin-top: 20px; padding: 0 .7em;"> 
+		<p><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
+			{msg}
+		</p>
+	</div>
+	<br />
+	<!-- END:msg -->
+	
+	<div id="rta_categories" style="float:left;width: 100%;">
+            
+                <table>
+                    
+                    <tr>
+                        
+                        <th align="right">{ds_category_label} </th>
+                        <th align="right">{delete_label}</th>
+                    </tr>
+                    <!-- BEGIN:itemcategories -->
+                    <tr>
+                        
+                        <td align="left">
+                            {ds_category}
+                        </td>
+                        <td>
+                            <a href="" onclick="return confirmDeleteCategoryAjax('{msg_confirm_delete}','{msg_confirm_title}','doAction?action=delete_contactcategory&k={key}', 'rta_categories')"><img title="{delete_category_label}" src="css/smile/images/del.png" class="hrefImg"/></a>
+                        </td>
+                    </tr>
+                    <!-- END:itemcategories -->
+                    
+                </table>
+            
+           
+        </div>
+        <br/><br/>
+        <form name='editcategory' id='editcategory' action='doAction?action={submit_category}' method='post' onsubmit="return validate('editcategory');" >
+            <table>
+                <tr>
+				
+				<td align="left" colspan="2">
+				
+					{Category_find}
+				</td>
+			</tr>
+            </table>
+
+            <p style="text-align:center">
+                <input type='submit' name='{lbl_save}' value='{add_category}'/>
+            </p>
+        </form>
+
+
+
+	<form name='editcontact' id='editcontact' action='doAction?action={submit}' method='post' onsubmit="return validate('editcontact');">
+		
+		<table>
+			<tr>
+				<td align="right">{cd_contact_label}:</td>
+				<td align="left">
+					{cd_contact}
+					<input type="hidden" readonly name="cd_contact" id="cd_contact" value="{cd_contact}"/>
+				</td>
+			</tr>
+			
+			<tr>
+				<td align="right">{ds_name_label}  {ds_name_required}</td>
+				<td align="left">
+					<input type='text' name='ds_name' id='ds_name' size='40' value="{ds_name}" jVal="{valid:function (val) { return required(val,' {ds_name_required_msg}'); }}"/>
+				</td>
+			</tr>
+			
+			<tr>
+				<td align="right">{ds_mail_label}  {ds_mail_required}</td>
+				<td align="left">
+					<input type='text' name='ds_mail' id='ds_mail' size='40' value="{ds_mail}" jVal="{valid:function (val) { return required(val,' {ds_mail_required_msg}') + isMail(val,' {ds_mail_mail_msg}'); }}"/>
+				</td>
+			</tr>
+			
+			
+			
+						
+			<tr>
+				<td align="right">{ds_phone_label}</td>
+				<td align="left">
+					<input type='text' name='ds_phone' id='ds_phone' size='40' value="{ds_phone}"/>
+				</td>
+			</tr>
+						
+			<tr>
+				<td align="right">{ds_movil_label}</td>
+				<td align="left">
+					<input type='text' name='ds_movil' id='ds_movil' size='40' value="{ds_movil}"/>
+				</td>
+			</tr>
+						
+			<tr>
+				<td align="right">{ds_address_label}</td>
+				<td align="left">
+					<input type='text' name='ds_address' id='ds_address' size='40' value="{ds_address}"/>
+				</td>
+			</tr>
+						
+			<tr>
+				<td align="right">{dt_birthday_label}</td>
+				<td align="left">
+					<input type='text' name='dt_birthday' id='dt_birthday' size='40' value="{dt_birthday}"/>
+				</td>
+			</tr>
+						
+			
+						
+			
+						
+			<tr>
+				<td align="right">{ds_company_label}</td>
+				<td align="left">
+					<input type='text' name='ds_company' id='ds_company' size='40' value="{ds_company}"/>
+				</td>
+			</tr>
+			
+			<tr>
+				<td align="right">{bl_signed_label}</td>
+				<td align="left">
+					<input type='checkbox' name='bl_signed' id='bl_signed' value="1" {checked_bl_signed}/>
+				</td>
+			</tr>
+			
+			<tr>
+				<td align="right">{bl_blocked_label}  {bl_blocked_required}</td>
+				<td align="left">
+					
+					<input type='checkbox' name='bl_blocked' id='bl_blocked' value="1" {checked_bl_blocked}/>
+				</td>
+			</tr>
+			
+			
+			
+		</table>
+		
+		<p style="text-align:center">
+			<input type='submit' name='{lbl_save}' value='{lbl_save}'/>
+			<input type='reset' name='{lbl_cancel}' value='{lbl_cancel}' onclick="javascript:window.location.href= 'doAction?action=list_contacts';"/>
+		</p>
+		
+		
+	</form>		
+	<div class="camposRequeridos">(*) {msg_required_fields}</div>
+</div>
+<!-- END:main -->

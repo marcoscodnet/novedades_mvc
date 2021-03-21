@@ -1,0 +1,54 @@
+<!-- BEGIN:main -->
+
+
+<script language="javascript" src="{WEB_PATH}js/autocomplete/simpleAutoComplete.js"></script>
+<link rel="stylesheet" href="{WEB_PATH}css/autocomplete/simpleAutoComplete.css" type="text/css" />
+
+
+
+<div id="editar">
+	<div align="justify"><p class="titulo">{title}</p></div>
+
+	<!-- BEGIN:msg -->
+	<div class="ui-state-error ui-corner-all" style="margin-top: 20px; padding: 0 .7em;"> 
+		<p><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
+			{msg}
+		</p>
+	</div>
+	<br />
+	<!-- END:msg -->
+
+	<form name='editcategory' id='editcategory' action='doAction?action={submit}' method='post' onsubmit="return validate('editcategory');">
+		
+		<table>
+			<tr>
+				<td align="right">{cd_category_label}:</td>
+				<td align="left">
+					{cd_category}
+					<input type="hidden" readonly name="cd_category" id="cd_category" value="{cd_category}"/>
+				</td>
+			</tr>
+			
+			<tr>
+				<td align="right">{ds_category_label}  {ds_category_required}</td>
+				<td align="left">
+					<input type='text' name='ds_category' id='ds_category' size='40' value="{ds_category}" jVal="{valid:function (val) { return required(val,' {ds_category_required_msg}'); }}"/>
+				</td>
+			</tr>
+			
+			
+			
+			
+			
+		</table>
+		
+		<p style="text-align:center">
+			<input type='submit' name='{lbl_save}' value='{lbl_save}'/>
+			<input type='reset' name='{lbl_cancel}' value='{lbl_cancel}' onclick="javascript:window.location.href= 'doAction?action=list_categories';"/>
+		</p>
+		
+		
+	</form>		
+	<div class="camposRequeridos">(*) {msg_required_fields}</div>
+</div>
+<!-- END:main -->

@@ -1,0 +1,116 @@
+<!-- BEGIN:main -->
+
+
+<script language="javascript" src="{WEB_PATH}js/autocomplete/simpleAutoComplete.js"></script>
+<link rel="stylesheet" href="{WEB_PATH}css/autocomplete/simpleAutoComplete.css" type="text/css" />
+<script type="text/javascript" src="{WEB_PATH}libs/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="{WEB_PATH}libs/ckeditor/adapters/jquery.js"></script>	
+
+
+<script type="text/javascript">
+
+
+window.onload = function() {
+	
+	CKEDITOR.replace('ds_text',{toolbar:'Newsletter',width:'600',height:'300',filebrowserBrowseUrl : '{WEB_PATH}libs/ckeditor/filemanager/browser/default/browser.html?Connector={WEB_PATH}libs/ckeditor/filemanager/connectors/php/connector.php?Type=Image',
+		  filebrowserWindowWidth : '640',
+		  filebrowserWindowHeight : '500'});
+	
+	
+
+	
+	
+
+}
+{viewTemp}	
+</script>
+
+<script type="text/javascript">
+function newsletter_change(attr){
+	
+}
+</script>
+
+<div id="editar">
+	<div align="justify"><p class="titulo">{title}</p></div>
+
+	<!-- BEGIN:msg -->
+	<div class="ui-state-error ui-corner-all" style="margin-top: 20px; padding: 0 .7em;"> 
+		<p><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
+			{msg}
+		</p>
+	</div>
+	<br />
+	<!-- END:msg -->
+
+	<form name='edititem' id='edititem' action='doAction?action={submit}' method='post' onsubmit="return validate('edititem');" enctype= "multipart/form-data">
+		
+		<table>
+		
+			<tr>
+				<td align="right">{cd_item_label}:</td>
+				<td align="left">
+					{cd_item}
+					<input type="hidden" readonly name="cd_item" id="cd_item" value="{cd_item}"/>
+				</td>
+			</tr>		
+			<tr>
+				<td align="right">{cd_newsletter_label} {cd_newsletter_required}</td>
+				<td align="left">
+					{newsletter_find}
+				</td>
+			</tr>
+			
+			<tr>
+				<td align="right">{nu_order_label}  {nu_order_required}</td>
+				<td align="left">
+					<input type='text' name='nu_order' id='nu_order' size='5' value="{nu_order}" jVal="{valid:function (val) { return isNumber(val,' {nu_order_valid_msg}'); }}"/>
+				</td>
+			</tr>
+			
+			<tr>
+				<td align="right">{ds_image_label}</td>
+				<td align="left">
+					
+					<input type='file' name='ds_image' id='ds_image' jVal="{valid:function (val) { return isImage(val,' {ds_image_valid_msg}'); }}"/>
+					<div id="divImage">{divImage}</div>
+					<input type="hidden" readonly name="ds_imageant" id="ds_imageant" value="{ds_imageant}"/>
+				</td>
+				
+			</tr>
+					
+			<tr>
+				<td align="right">{ds_text_label}</td>
+				<td align="left">
+					<textarea name="ds_text" id="ds_text" cols="50" rows="30" />{ds_text}</textarea>
+				</td>
+			</tr>
+						
+			
+						
+				
+			
+			
+			
+			
+						
+			
+						
+			
+			
+		</table>
+		
+		<p style="text-align:center">
+			
+			<input type='submit' name='{lbl_save}' value='{lbl_save}'/>
+			
+			<input type='reset' name='{lbl_cancel}' value='{lbl_cancel}' onclick="javascript:window.location.href= 'doAction?action=list_items&id={cd_newsletter}';"/>
+		</p>
+		
+		
+	</form>		
+	<div class="camposRequeridos">(*) {msg_required_fields}</div>
+</div>
+
+
+<!-- END:main -->

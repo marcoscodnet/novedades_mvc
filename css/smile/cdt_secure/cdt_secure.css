@@ -1,0 +1,117 @@
+
+/* tabs */
+ul.tabs li.accesos a {
+    background-image: url(images/tab-accesos.png);
+}
+
+ul.tabs li.admin a {
+    background-image: url(images/tab-builder.png);
+}
+
+ul.tabs li.config a {
+    background-image: url(images/tab-config.png);
+}
+
+ul.tabs li.newsletter a {
+    background-image: url(images/tab-newsletter.png);
+}
+
+ul.tabs li.widgets a {
+    background-image: url(images/tab-widgets.png);
+}
+
+/* {salir} */
+ul.panel li.exit a {
+    background-image: url(images/salir_48.png);
+}
+
+/* {cdtactionfunctions} */
+ul.panel li.cdtactionfunctions a {
+    background-image: url(images/cdtactionfunctions_48.png);
+}
+ul.panellateral li.cdtactionfunctions a {
+    background-image: url(images/cdtactionfunctions_32.png);
+}
+
+/* {cdtfunctions} */
+ul.panel li.cdtfunctions a {
+    background-image: url(images/cdtfunctions_48.png);
+}
+ul.panellateral li.cdtfunctions a {
+    background-image: url(images/cdtfunctions_32.png);
+}
+
+#dock .cdtfunctions{
+    background: url(images/cdtfunctions_32.png) no-repeat;
+}
+
+
+/* {cdtmenugroups} */
+ul.panel li.cdtmenugroups a {
+    background-image: url(images/cdtmenugroups_48.png);
+}
+ul.panellateral li.cdtmenugroups a {
+    background-image: url(images/cdtmenugroups_32.png);
+}
+#dock .cdtmenugroups {
+    background: url(images/cdtmenugroups_32.png) no-repeat;
+}
+
+/* {cdtmenuoptions} */
+ul.panel li.cdtmenuoptions a {
+    background-image: url(images/cdtmenuoptions_48.png);
+}
+ul.panellateral li.cdtmenuoptions a {
+    background-image: url(images/cdtmenuoptions_32.png);
+}
+
+/* {cdtregistrations} */
+ul.panel li.cdtregistrations a {
+    background-image: url(images/cdtregistrations_48.png);
+}
+ul.panellateral li.cdtregistrations a {
+    background-image: url(images/cdtregistrations_32.png);
+}
+
+/* {cdtusers} */
+ul.panel li.cdtusers a {
+    background-image: url(images/cdtusers_48.png);
+}
+ul.panellateral li.cdtusers a {
+    background-image: url(images/cdtusers_32.png);
+}
+
+/* {cdtusergroups} */
+ul.panel li.cdtusergroups a {
+    background-image: url(images/cdtusergroups_48.png);
+}
+ul.panellateral li.cdtusergroups a {
+    background-image: url(images/cdtusergroups_32.png);
+}
+
+/* {cdtusergroupfunctions} */
+ul.panel li.cdtusergroupfunctions a {
+    background-image: url(images/cdtusergroupfunctions_48.png);
+}
+ul.panellateral li.cdtusergroupfunctions a {
+    background-image: url(images/cdtusergroupfunctions_32.png);
+}
+
+/* grilla */
+.rich_option_item_edit_functions {
+    margin-top: -4px;
+    vertical-align: middle;
+    display: inline-block;
+    position: relative;
+    background: url("images/permission.png") no-repeat scroll 0px 4px  transparent;
+    height: 35px;
+    width: 80px;
+    color: #444444;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 35px;
+    text-align: center;
+    margin-left: -4px;
+}
+
+

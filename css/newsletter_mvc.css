@@ -1,0 +1,163 @@
+
+ul.tabs li.builder a {
+	background-image: url(images/tab-builder.png);
+}
+
+/* {categories} */
+ul.panel li.categories a {
+	background-image: url(images/categories_48.png);
+}
+ul.panellateral li.categories a {
+	background-image: url(images/categories_32.png);
+}
+
+/* {contacts} */
+ul.panel li.contacts a {
+	background-image: url(images/contacts_48.png);
+}
+ul.panellateral li.contacts a {
+	background-image: url(images/contacts_32.png);
+}
+
+/* {contactcategories} */
+ul.panel li.contactcategories a {
+	background-image: url(images/contactcategories_48.png);
+}
+ul.panellateral li.contactcategories a {
+	background-image: url(images/contactcategories_32.png);
+}
+
+/* {contactsendingnewsletters} */
+ul.panel li.contactsendingnewsletters a {
+	background-image: url(images/contactsendingnewsletters_48.png);
+}
+ul.panellateral li.contactsendingnewsletters a {
+	background-image: url(images/contactsendingnewsletters_32.png);
+}
+
+/* {images} */
+ul.panel li.images a {
+	background-image: url(images/images_48.png);
+}
+ul.panellateral li.images a {
+	background-image: url(images/images_32.png);
+}
+
+/* {imagecategories} */
+ul.panel li.imagecategories a {
+	background-image: url(images/imagecategories_48.png);
+}
+ul.panellateral li.imagecategories a {
+	background-image: url(images/imagecategories_32.png);
+}
+
+/* {newsletters} */
+ul.panel li.newsletters a {
+	background-image: url(images/newsletters_48.png);
+}
+ul.panellateral li.newsletters a {
+	background-image: url(images/newsletters_32.png);
+}
+
+/* {newsletterimages} */
+ul.panel li.newsletterimages a {
+	background-image: url(images/newsletterimages_48.png);
+}
+ul.panellateral li.newsletterimages a {
+	background-image: url(images/newsletterimages_32.png);
+}
+
+/* {sendingnewsletters} */
+ul.panel li.sendingnewsletters a {
+	background-image: url(images/sendingnewsletters_48.png);
+}
+ul.panellateral li.sendingnewsletters a {
+	background-image: url(images/sendingnewsletters_32.png);
+}
+
+/* {states} */
+ul.panel li.states a {
+	background-image: url(images/states_48.png);
+}
+ul.panellateral li.states a {
+	background-image: url(images/states_32.png);
+}
+
+/* {templates} */
+ul.panel li.templates a {
+	background-image: url(images/templates_48.png);
+}
+ul.panellateral li.templates a {
+	background-image: url(images/templates_32.png);
+}
+
+/* {cdt_action_functions} */
+ul.panel li.cdt_action_functions a {
+	background-image: url(images/cdt_action_functions_48.png);
+}
+ul.panellateral li.cdt_action_functions a {
+	background-image: url(images/cdt_action_functions_32.png);
+}
+
+/* {cdt_functions} */
+ul.panel li.cdt_functions a {
+	background-image: url(images/cdt_functions_48.png);
+}
+ul.panellateral li.cdt_functions a {
+	background-image: url(images/cdt_functions_32.png);
+}
+
+/* {cdt_menugroups} */
+ul.panel li.cdt_menugroups a {
+	background-image: url(images/cdt_menugroups_48.png);
+}
+ul.panellateral li.cdt_menugroups a {
+	background-image: url(images/cdt_menugroups_32.png);
+}
+
+/* {cdt_menuoptions} */
+ul.panel li.cdt_menuoptions a {
+	background-image: url(images/cdt_menuoptions_48.png);
+}
+ul.panellateral li.cdt_menuoptions a {
+	background-image: url(images/cdt_menuoptions_32.png);
+}
+
+/* {cdt_registrations} */
+ul.panel li.cdt_registrations a {
+	background-image: url(images/cdt_registrations_48.png);
+}
+ul.panellateral li.cdt_registrations a {
+	background-image: url(images/cdt_registrations_32.png);
+}
+
+/* {cdt_users} */
+ul.panel li.cdt_users a {
+	background-image: url(images/cdt_users_48.png);
+}
+ul.panellateral li.cdt_users a {
+	background-image: url(images/cdt_users_32.png);
+}
+
+/* {cdt_usergroups} */
+ul.panel li.cdt_usergroups a {
+	background-image: url(images/cdt_usergroups_48.png);
+}
+ul.panellateral li.cdt_usergroups a {
+	background-image: url(images/cdt_usergroups_32.png);
+}
+
+/* {cdt_usergroup_functions} */
+ul.panel li.cdt_usergroup_functions a {
+	background-image: url(images/cdt_usergroup_functions_48.png);
+}
+ul.panellateral li.cdt_usergroup_functions a {
+	background-image: url(images/cdt_usergroup_functions_32.png);
+}
+
+/* {subscriptions} */
+ul.panel li.subscriptions a {
+	background-image: url(images/subscriptions_48.png);
+}
+
+

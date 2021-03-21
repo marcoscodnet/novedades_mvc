@@ -1,0 +1,36 @@
+<!-- BEGIN:main -->
+<!-- BEGIN:msj -->
+<div style="margin-top: 20px; padding: 0 .7em;" class="ui-state-error ui-corner-all">
+    <p><span style="float: left; margin-right: .3em;" class="ui-icon ui-icon-alert"></span>
+			{msj}
+    </p>
+</div>
+<!-- END:msj -->
+
+            
+                <table>
+                    
+                    <tr>
+                        
+                        <th align="right">{ds_category_label} </th>
+                        <th align="right">{delete_label}</th>
+                    </tr>
+                    <!-- BEGIN:itemcategories -->
+                    <tr>
+                        
+                        <td align="left">
+                            {ds_category}
+                        </td>
+                        <td>
+                            <a href="" onclick="return confirmDeleteCategoryAjax('{msg_confirm_delete}','{msg_confirm_title}','doAction?action=delete_contactcategory&k={key}', 'rta_categories')"><img title="{delete_category_label}" src="css/smile/images/del.png" class="hrefImg"/></a>
+                        </td>
+                    </tr>
+                    <!-- END:itemcategories -->
+                    
+                </table>
+            
+           
+    
+
+
+<!-- END:main -->

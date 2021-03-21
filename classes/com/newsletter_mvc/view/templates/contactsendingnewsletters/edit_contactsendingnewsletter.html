@@ -1,0 +1,141 @@
+<!-- BEGIN:main -->
+
+
+<script language="javascript" src="{WEB_PATH}js/autocomplete/simpleAutoComplete.js"></script>
+<link rel="stylesheet" href="{WEB_PATH}css/autocomplete/simpleAutoComplete.css" type="text/css" />
+
+
+<script type="text/javascript">
+function sendingnewsletter_change(attr){
+	
+}
+</script>
+
+<script type="text/javascript">
+function contact_change(attr){
+	
+}
+</script>
+
+<script type="text/javascript">
+function category_change(attr){
+	
+}
+</script>
+
+<div id="editar">
+	<div align="justify"><p class="titulo">{title}</p></div>
+
+	<!-- BEGIN:msg -->
+	<div class="ui-state-error ui-corner-all" style="margin-top: 20px; padding: 0 .7em;"> 
+		<p><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
+			{msg}
+		</p>
+	</div>
+	<br />
+	<!-- END:msg -->
+
+	<form name='editcontactSendingNewsletter' id='editcontactSendingNewsletter' action='doAction?action={submit}' method='post' onsubmit="return validate('editcontactSendingNewsletter');">
+		
+		<table>
+			<tr>
+				<td align="right">{cd_contact_sending_newsletter_label}:</td>
+				<td align="left">
+					{cd_contact_sending_newsletter}
+					<input type="hidden" readonly name="cd_contact_sending_newsletter" id="cd_contact_sending_newsletter" value="{cd_contact_sending_newsletter}"/>
+				</td>
+			</tr>
+			
+			<tr>
+				<td align="right">{dt_sent_label}  {dt_sent_required}</td>
+				<td align="left">
+					<input type='text' name='dt_sent' id='dt_sent' size='40' value="{dt_sent}" jVal="{valid:function (val) { return required(val,' {dt_sent_required_msg}'); }}"/>
+				</td>
+			</tr>
+			
+			<tr>
+				<td align="right">{bl_processed_label}  {bl_processed_required}</td>
+				<td align="left">
+					<input type='text' name='bl_processed' id='bl_processed' size='40' value="{bl_processed}" jVal="{valid:function (val) { return required(val,' {bl_processed_required_msg}'); }}"/>
+				</td>
+			</tr>
+			
+			<tr>
+				<td align="right">{bl_open_label}  {bl_open_required}</td>
+				<td align="left">
+					<input type='text' name='bl_open' id='bl_open' size='40' value="{bl_open}" jVal="{valid:function (val) { return required(val,' {bl_open_required_msg}'); }}"/>
+				</td>
+			</tr>
+			
+						
+			<tr>
+				<td align="right">{dt_date_label}</td>
+				<td align="left">
+					<input type='text' name='dt_date' id='dt_date' size='40' value="{dt_date}"/>
+				</td>
+			</tr>
+						
+			<tr>
+				<td align="right">{ds_time_label}</td>
+				<td align="left">
+					<input type='text' name='ds_time' id='ds_time' size='40' value="{ds_time}"/>
+				</td>
+			</tr>
+						
+			<tr>
+				<td align="right">{bl_sent_label}</td>
+				<td align="left">
+					<input type='text' name='bl_sent' id='bl_sent' size='40' value="{bl_sent}"/>
+				</td>
+			</tr>
+						
+			<tr>
+				<td align="right">{nu_hard_label}</td>
+				<td align="left">
+					<input type='text' name='nu_hard' id='nu_hard' size='40' value="{nu_hard}"/>
+				</td>
+			</tr>
+						
+			<tr>
+				<td align="right">{nu_soft_label}</td>
+				<td align="left">
+					<input type='text' name='nu_soft' id='nu_soft' size='40' value="{nu_soft}"/>
+				</td>
+			</tr>
+			
+			
+			
+						
+			<tr>
+				<td align="right">{cd_sending_newsletter_label} {cd_sending_newsletter_required}</td>
+				<td align="left">
+					{sendingNewsletter_find}
+				</td>
+			</tr>
+						
+			<tr>
+				<td align="right">{cd_contact_label} {cd_contact_required}</td>
+				<td align="left">
+					{contact_find}
+				</td>
+			</tr>
+						
+			<tr>
+				<td align="right">{cd_category_label} {cd_category_required}</td>
+				<td align="left">
+					{category_find}
+				</td>
+			</tr>
+			
+		</table>
+		
+		<p style="text-align:center">
+			<input type='submit' name='{lbl_save}' value='{lbl_save}'/>
+			<input type='reset' name='{lbl_cancel}' value='{lbl_cancel}' onclick="javascript:window.location.href= 'doAction?action=list_contactsendingnewsletters';"/>
+		</p>
+		
+		
+	</form>		
+	<div class="camposRequeridos">(*) {msg_required_fields}</div>
+</div>
+<!-- END:main -->

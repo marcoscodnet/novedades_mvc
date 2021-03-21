@@ -1,0 +1,74 @@
+<!-- BEGIN:main -->
+
+
+<script language="javascript" src="{WEB_PATH}js/autocomplete/simpleAutoComplete.js"></script>
+<link rel="stylesheet" href="{WEB_PATH}css/autocomplete/simpleAutoComplete.css" type="text/css" />
+
+
+<script type="text/javascript">
+function newsletter_change(attr){
+	
+}
+</script>
+
+<div id="editar">
+	<div align="justify"><p class="titulo">{title}</p></div>
+
+	<!-- BEGIN:msg -->
+	<div class="ui-state-error ui-corner-all" style="margin-top: 20px; padding: 0 .7em;"> 
+		<p><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
+			{msg}
+		</p>
+	</div>
+	<br />
+	<!-- END:msg -->
+
+	<form name='editnewsletterImage' id='editnewsletterImage' action='doAction?action={submit}' method='post' onsubmit="return validate('editnewsletterImage');" enctype= "multipart/form-data">
+		
+		<table>
+			
+			
+			<tr>
+				<td align="right">{cd_newsletter_label} {cd_newsletter_required}</td>
+				<td align="left">
+					{newsletter_find}
+				</td>
+			</tr>
+			
+			<tr>
+				<td align="right">{img_header_label}  {img_header_required}</td>
+				<td align="left">
+					
+					<input type='file' name='img_header' id='img_header' jVal="{valid:function (val) { return required(val,' {img_header_required_msg}')+ isImage(val,' {ds_image_valid_msg}'); }}"/>
+				</td>
+				<div id="divHeader">{divHeader}</div>
+			</tr>
+			
+			<tr>
+				<td align="right">{img_footer_label}  {img_footer_required}</td>
+				<td align="left">
+					<input type='file' name='img_footer' id='img_footer' jVal="{valid:function (val) { return required(val,' {img_footer_required_msg}')+ isImage(val,' {ds_image_valid_msg}'); }}"/>
+				</td>
+				<div id="divFooter">{divFooter}</div>
+			</tr>
+			
+						
+			
+			
+			
+			
+						
+			
+			
+		</table>
+		
+		<p style="text-align:center">
+			<input type='submit' name='{lbl_save}' value='{lbl_save}'/>
+			<input type='reset' name='{lbl_cancel}' value='{lbl_cancel}' onclick="javascript:window.location.href= 'doAction?action=list_newsletters';"/>
+		</p>
+		
+		
+	</form>		
+	<div class="camposRequeridos">(*) {msg_required_fields}</div>
+</div>
+<!-- END:main -->

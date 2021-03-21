@@ -1,0 +1,100 @@
+<!-- BEGIN:main -->
+
+
+<script language="javascript" src="{WEB_PATH}js/autocomplete/simpleAutoComplete.js"></script>
+<link rel="stylesheet" href="{WEB_PATH}css/autocomplete/simpleAutoComplete.css" type="text/css" />
+
+
+<script type="text/javascript">
+function image_change(attr){
+	
+}
+</script>
+
+<script type="text/javascript">
+function template_change(attr){
+	
+}
+</script>
+
+<div id="editar">
+	<div align="justify"><p class="titulo">{title}</p></div>
+
+	<!-- BEGIN:msg -->
+	<div class="ui-state-error ui-corner-all" style="margin-top: 20px; padding: 0 .7em;"> 
+		<p><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
+			{msg}
+		</p>
+	</div>
+	<br />
+	<!-- END:msg -->
+
+	<form name='editimage' id='editimage' action='doAction?action={submit}' method='post' onsubmit="return validate('editimage');">
+		
+		<table>
+			<tr>
+				<td align="right">{cd_image_label}:</td>
+				<td align="left">
+					{cd_image}
+					<input type="hidden" readonly name="cd_image" id="cd_image" value="{cd_image}"/>
+				</td>
+			</tr>
+			
+			<tr>
+				<td align="right">{nu_size_label}  {nu_size_required}</td>
+				<td align="left">
+					<input type='text' name='nu_size' id='nu_size' size='40' value="{nu_size}" jVal="{valid:function (val) { return required(val,' {nu_size_required_msg}'); }}"/>
+				</td>
+			</tr>
+			
+			<tr>
+				<td align="right">{dt_date_label}  {dt_date_required}</td>
+				<td align="left">
+					<input type='text' name='dt_date' id='dt_date' size='40' value="{dt_date}" jVal="{valid:function (val) { return required(val,' {dt_date_required_msg}'); }}"/>
+				</td>
+			</tr>
+			
+						
+			<tr>
+				<td align="right">{ds_image_label}</td>
+				<td align="left">
+					<input type='text' name='ds_image' id='ds_image' size='40' value="{ds_image}"/>
+				</td>
+			</tr>
+						
+			<tr>
+				<td align="right">{ds_type_label}</td>
+				<td align="left">
+					<input type='text' name='ds_type' id='ds_type' size='40' value="{ds_type}"/>
+				</td>
+			</tr>
+			
+			
+			
+						
+			<tr>
+				<td align="right">{cd_image_category_label} {cd_image_category_required}</td>
+				<td align="left">
+					{image_find}
+				</td>
+			</tr>
+						
+			<tr>
+				<td align="right">{cd_template_label} {cd_template_required}</td>
+				<td align="left">
+					{template_find}
+				</td>
+			</tr>
+			
+		</table>
+		
+		<p style="text-align:center">
+			<input type='submit' name='{lbl_save}' value='{lbl_save}'/>
+			<input type='reset' name='{lbl_cancel}' value='{lbl_cancel}' onclick="javascript:window.location.href= 'doAction?action=list_images';"/>
+		</p>
+		
+		
+	</form>		
+	<div class="camposRequeridos">(*) {msg_required_fields}</div>
+</div>
+<!-- END:main -->

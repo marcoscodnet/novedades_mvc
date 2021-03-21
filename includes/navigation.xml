@@ -1,0 +1,724 @@
+<?xml version='1.0' standalone='yes'?>
+<navegation>
+	<!-- Acciones por default. 
+		 Permite definir para una entity, las actiones por default:
+		 	- add, update, delete, list, view.
+		 Se debe indicar el name de la entity y su plural.
+		 Las actiones quedaran definidas de la siguiente manera, tomando
+		 como ejemplo 'usuario'.
+		    - add_usuario_init		
+		    - add_usuario		
+		    - update_usuario_init		
+		    - update_usuario		
+		    - delete_usuario		
+		    - list_usuarios
+		 Ademas se le agregan los forwards por default.
+	-->
+
+	<!-- ********************************* -->
+	<!-- cdt_core -->
+	<!-- ********************************* -->
+	
+	<!-- pagina no encontrada -->
+	<action name='page_not_found' class='CdtPageNotFoundAction' />
+		
+	<!-- acceso denegado -->
+	<action name='access_denied' class='CdtAccessDeniedAction' />
+		
+	<!-- pagina de error -->
+	<action name='error' class='CdtErrorAction' />
+	
+	<!-- forwards -->
+	<forward name='page_not_found' url='doAction?action=page_not_fount' />
+	<forward name='access_denied' url='doAction?action=access_denied' />
+	<forward name='error' url='doAction?action=error' />
+
+<filter name="security" class="CdtSecureFilter" urlPattern="/"/>
+  
+    <!-- ********************************* -->
+	<!--  components --> 
+	<!-- ********************************* -->
+    <action name='cmp_autocomplete' class='CMPAutocompleteAction' />
+    <action name='cmp_findobject' class='CMPFindObjectAction' />
+    <action name='cmp_findpopup' class='CMPFindPopupAction' />
+    <action name='cmp_grid' class='CMPGridAction' />
+    <action name='cmp_grid_pdf' class='CMPGridExportPdfAction' />
+    <action name='cmp_grid_xls' class='CMPGridExportXlsAction' />
+		
+	
+	<!-- ********************************* -->
+	<!-- cdt_ui_smile -->
+	<!-- ********************************* -->
+
+	<!-- panel de control -->
+    <action name='panel_control' class='SmilePanelAction'/>
+
+	<!-- ********************************* -->
+	<!-- cdt_secure -->
+	<!-- ********************************* -->
+
+	<!-- inicio y login -->
+    <action name='login_init' class='CdtLoginInitAction' />
+    <action name='login' class='CdtLoginAction' />
+    <forward name='login_success' url='doAction?action=home' />
+    <forward name='login_error' url='doAction?action=login_init' />
+
+    <action name='home' class='SmilePanelAction' currentMenuGroup='' />
+    <action name='exit' class='CdtExitAction' />
+    <forward name='exit_success' url='doAction?action=login_init' />
+
+	<!-- registracion -->
+    <action name='signup_init' class='CdtSignupInitAction' />
+    <action name='signup' class='CdtSignupAction' />
+    <action name='signup_success' class='CdtSignupSuccessAction' />
+    <action name='activate_registration' class='ActivateCdtRegistrationAction' />
+    <action name='activate_registration_success' class='ActivateCdtRegistrationSuccessAction' />
+    <action name='terms_conditions' class='CdtTermsAndConditionsAction' />
+    
+    <forward name='signup_error' url='doAction?action=signup_init' />
+    <forward name='signup_success' url='doAction?action=signup_success' />
+    <forward name='activate_registration_error' url='doAction?action=error' />
+    <forward name='activate_registration_success' url='doAction?action=activate_registration_success' />
+
+	<!-- solicitud de nueva contraseña -->
+    <action name='forgot_password_init' class='CdtForgotPasswordInitAction' />
+    <action name='forgot_password' class='CdtForgotPasswordAction' />
+    <action name='forgot_password_success' class='CdtForgotPasswordSuccessAction' />
+    
+    <forward name='forgot_password_error' url='doAction?action=forgot_password_init' />
+    <forward name='forgot_password_success' url='doAction?action=forgot_password_success' />
+
+	<!-- CdtActionFunctions -->
+    <action name='list_cdtactionfunctions' class='ListCdtActionFunctionsAction'
+		currentMenuGroup='1' />
+    <action name='add_cdtactionfunction' class='AddCdtActionFunctionAction' />
+    <action name='add_cdtactionfunction_init' class='AddCdtActionFunctionInitAction' />
+    <action name='update_cdtactionfunction' class='UpdateCdtActionFunctionAction' />
+    <action name='update_cdtactionfunction_init' class='UpdateCdtActionFunctionInitAction' />
+    <action name='view_cdtactionfunction' class='ViewCdtActionFunctionAction' />
+    <action name='delete_cdtactionfunction' class='DeleteCdtActionFunctionAction' />
+
+    <forward name='add_cdtactionfunction_success' url='doAction?action=list_cdtactionfunctions' />
+    <forward name='add_cdtactionfunction_error' url='doAction?action=add_cdtactionfunction_init' />
+    <forward name='update_cdtactionfunction_success' url='doAction?action=list_cdtactionfunctions' />
+    <forward name='update_cdtactionfunction_error' url='doAction?action=add_cdtactionfunction_init' />
+    <forward name='delete_cdtactionfunction_success' url='doAction?action=list_cdtactionfunctions' />
+    <forward name='delete_cdtactionfunction_error' url="doAction?action=list_cdtactionfunctions" />
+    <forward name='list_cdtactionfunction_error' url='doAction?action=list_cdtactionfunctions' />
+
+
+	<!-- CdtFunctions -->
+    <action name='list_cdtfunctions' class='ListCdtFunctionsAction'
+		currentMenuGroup='1' />
+    <action name='add_cdtfunction' class='AddCdtFunctionAction' />
+    <action name='add_cdtfunction_init' class='AddCdtFunctionInitAction' />
+    <action name='update_cdtfunction' class='UpdateCdtFunctionAction' />
+    <action name='update_cdtfunction_init' class='UpdateCdtFunctionInitAction' />
+    <action name='view_cdtfunction' class='ViewCdtFunctionAction' />
+    <action name='delete_cdtfunction' class='DeleteCdtFunctionAction' />
+
+    <forward name='add_cdtfunction_success' url='doAction?action=list_cdtfunctions' />
+    <forward name='add_cdtfunction_error' url='doAction?action=add_cdtfunction_init' />
+    <forward name='update_cdtfunction_success' url='doAction?action=list_cdtfunctions' />
+    <forward name='update_cdtfunction_error' url='doAction?action=add_cdtfunction_init' />
+    <forward name='delete_cdtfunction_success' url='doAction?action=list_cdtfunctions' />
+    <forward name='delete_cdtfunction_error' url='doAction?action=list_cdtfunctions' />
+    <forward name='list_cdtfunction_error' url='doAction?action=list_cdtfunctions' />
+
+
+	<!-- CdtMenuGroups -->
+    <action name='list_cdtmenugroups' class='ListCdtMenuGroupsAction'
+		currentMenuGroup='1' />
+    <action name='add_cdtmenugroup' class='AddCdtMenuGroupAction' />
+    <action name='add_cdtmenugroup_init' class='AddCdtMenuGroupInitAction' />
+    <action name='update_cdtmenugroup' class='UpdateCdtMenuGroupAction' />
+    <action name='update_cdtmenugroup_init' class='UpdateCdtMenuGroupInitAction' />
+    <action name='view_cdtmenugroup' class='ViewCdtMenuGroupAction' />
+    <action name='delete_cdtmenugroup' class='DeleteCdtMenuGroupAction' />
+
+    <forward name='add_cdtmenugroup_success' url='doAction?action=list_cdtmenugroups' />
+    <forward name='add_cdtmenugroup_error' url='doAction?action=add_cdtmenugroup_init' />
+    <forward name='update_cdtmenugroup_success' url='doAction?action=list_cdtmenugroups' />
+    <forward name='update_cdtmenugroup_error' url='doAction?action=add_cdtmenugroup_init' />
+    <forward name='delete_cdtmenugroup_success' url='doAction?action=list_cdtmenugroups' />
+    <forward name='delete_cdtmenugroup_error' url='doAction?action=list_cdtmenugroups' />
+    <forward name='list_cdtmenugroup_error' url='doAction?action=list_cdtmenugroups' />
+
+
+	<!-- CdtMenuOptions -->
+    <action name='list_cdtmenuoptions' class='ListCdtMenuOptionsAction'
+		currentMenuGroup='1' />
+    <action name='add_cdtmenuoption' class='AddCdtMenuOptionAction' />
+    <action name='add_cdtmenuoption_init' class='AddCdtMenuOptionInitAction' />
+    <action name='update_cdtmenuoption' class='UpdateCdtMenuOptionAction' />
+    <action name='update_cdtmenuoption_init' class='UpdateCdtMenuOptionInitAction' />
+    <action name='view_cdtmenuoption' class='ViewCdtMenuOptionAction' />
+    <action name='delete_cdtmenuoption' class='DeleteCdtMenuOptionAction' />
+
+    <forward name='add_cdtmenuoption_success' url='doAction?action=list_cdtmenuoptions' />
+    <forward name='add_cdtmenuoption_error' url='doAction?action=add_cdtmenuoption_init' />
+    <forward name='update_cdtmenuoption_success' url='doAction?action=list_cdtmenuoptions' />
+    <forward name='update_cdtmenuoption_error' url='doAction?action=add_cdtmenuoption_init' />
+    <forward name='delete_cdtmenuoption_success' url='doAction?action=list_cdtmenuoptions' />
+    <forward name='delete_cdtmenuoption_error' url='doAction?action=list_cdtmenuoptions' />
+    <forward name='list_cdtmenuoption_error' url='doAction?action=list_cdtmenuoptions' />
+
+
+	<!-- CdtRegistrations -->
+    <action name='list_cdtregistrations' class='ListCdtRegistrationsAction'
+		currentMenuGroup='1' />
+    <action name='add_cdtregistration' class='AddCdtRegistrationAction' />
+    <action name='add_cdtregistration_init' class='AddCdtRegistrationInitAction' />
+    <action name='update_cdtregistration' class='UpdateCdtRegistrationAction' />
+    <action name='update_cdtregistration_init' class='UpdateCdtRegistrationInitAction' />
+    <action name='view_cdtregistration' class='ViewCdtRegistrationAction' />
+    <action name='delete_cdtregistration' class='DeleteCdtRegistrationAction' />
+
+    <forward name='add_cdtregistration_success' url='doAction?action=list_cdtregistrations' />
+    <forward name='add_cdtregistration_error' url='doAction?action=add_cdtregistration_init' />
+    <forward name='update_cdtregistration_success' url='doAction?action=list_cdtregistrations' />
+    <forward name='update_cdtregistration_error' url='doAction?action=add_cdtregistration_init' />
+    <forward name='delete_cdtregistration_success' url='doAction?action=list_cdtregistrations' />
+    <forward name='delete_cdtregistration_error' url='doAction?action=list_cdtregistrations' />
+    <forward name='list_cdtregistration_error' url='doAction?action=list_cdtregistrations' />
+
+
+	<!-- CdtUsers -->
+    <action name='list_cdtusers' class='ListCdtUsersAction'
+		currentMenuGroup='1' />
+    <action name='add_cdtuser' class='AddCdtUserAction' />
+    <action name='add_cdtuser_init' class='AddCdtUserInitAction' />
+    <action name='update_cdtuser' class='UpdateCdtUserAction' />
+    <action name='update_cdtuser_init' class='UpdateCdtUserInitAction' />
+    <action name='view_cdtuser' class='ViewCdtUserAction' />
+    <action name='delete_cdtuser' class='DeleteCdtUserAction' />
+    <action name='edit_cdtuserprofile' class='EditUserProfileAction' />
+    <action name='edit_cdtuserprofile_init' class='EditUserProfileInitAction' />
+    <action name='view_new_cdtuser' class='ViewNewCdtUserAction' />
+	
+	
+    <forward name='add_cdtuser_success' url='doAction?action=view_new_cdtuser' />
+    <forward name='add_cdtuser_error' url='doAction?action=add_cdtuser_init' />
+    <forward name='update_cdtuser_success' url='doAction?action=list_cdtusers' />
+    <forward name='update_cdtuser_error' url='doAction?action=update_cdtuser_init' />
+    <forward name='delete_cdtuser_success' url='doAction?action=list_cdtusers' />
+    <forward name='delete_cdtuser_error' url='doAction?action=list_cdtusers' />
+    <forward name='list_cdtuser_error' url='doAction?action=home' />
+    <forward name='edit_cdtuserprofile_success' url='doAction?action=home' />
+    <forward name='edit_cdtuserprofile_error' url='doAction?action=edit_cdtuserprofile_init' />
+	
+
+	<!-- CdtUserGroups -->
+    <action name='list_cdtusergroups' class='ListCdtUserGroupsAction'
+		currentMenuGroup='1' />
+    <action name='add_cdtusergroup' class='AddCdtUserGroupAction' />
+    <action name='add_cdtusergroup_init' class='AddCdtUserGroupInitAction' />
+    <action name='update_cdtusergroup' class='UpdateCdtUserGroupAction' />
+    <action name='update_cdtusergroup_init' class='UpdateCdtUserGroupInitAction' />
+    <action name='view_cdtusergroup' class='ViewCdtUserGroupAction' />
+    <action name='delete_cdtusergroup' class='DeleteCdtUserGroupAction' />
+
+    <forward name='add_cdtusergroup_success' url='doAction?action=list_cdtusergroups' />
+    <forward name='add_cdtusergroup_error' url='doAction?action=add_cdtusergroup_init' />
+    <forward name='update_cdtusergroup_success' url='doAction?action=list_cdtusergroups' />
+    <forward name='update_cdtusergroup_error' url='doAction?action=add_cdtusergroup_init' />
+    <forward name='delete_cdtusergroup_success' url='doAction?action=list_cdtusergroups' />
+    <forward name='delete_cdtusergroup_error' url='doAction?action=list_cdtusergroups' />
+    <forward name='list_cdtusergroup_error' url='doAction?action=list_cdtusergroups' />
+
+
+	<!-- CdtUserGroupFunctions -->
+    <action name='list_cdtusergroupfunctions' class='ListCdtUserGroupFunctionsAction'
+		currentMenuGroup='1' />
+    <action name='add_cdtusergroupfunction' class='AddCdtUserGroupFunctionAction' />
+    <action name='add_cdtusergroupfunction_init' class='AddCdtUserGroupFunctionInitAction' />
+    <action name='update_cdtusergroupfunction' class='UpdateCdtUserGroupFunctionAction' />
+    <action name='update_cdtusergroupfunction_init' class='UpdateCdtUserGroupFunctionInitAction' />
+    <action name='view_cdtusergroupfunction' class='ViewCdtUserGroupFunctionAction' />
+    <action name='delete_cdtusergroupfunction' class='DeleteCdtUserGroupFunctionAction' />
+
+    <action name='assign_usergroup_functions' class='AssignUserGroupFunctionsAction' />
+    <action name='assign_usergroup_functions_init' class='AssignUserGroupFunctionsInitAction' />
+
+    <forward name='add_cdtusergroupfunction_success' url='doAction?action=list_cdtusergroupfunctions' />
+    <forward name='add_cdtusergroupfunction_error' url='doAction?action=add_cdtusergroupfunction_init' />
+    <forward name='update_cdtusergroupfunction_success' url='doAction?action=list_cdtusergroupfunctions' />
+    <forward name='update_cdtusergroupfunction_error' url='doAction?action=add_cdtusergroupfunction_init' />
+    <forward name='delete_cdtusergroupfunction_success' url='doAction?action=list_cdtusergroupfunctions' />
+    <forward name='delete_cdtusergroupfunction_error' url='doAction?action=list_cdtusergroupfunctions' />
+    <forward name='list_cdtusergroupfunction_error' url='doAction?action=list_cdtusergroupfunctions' />
+    <forward name='assign_usergroup_functions_error' url='doAction?action=assign_usergroup_functions_init' />
+    <forward name='assign_usergroup_functions_success' url='doAction?action=list_cdtusergroups' />
+	
+	
+	
+    <!-- categories -->
+    <action name='list_categories' class='ListCategoriesAction' currentMenuGroup='4'/>
+    <action name='add_category' class='AddCategoryAction' />
+    <action name='add_category_init' class='AddCategoryInitAction' currentMenuGroup='4'/>
+    <action name='update_category' class='UpdateCategoryAction' />
+    <action name='update_category_init' class='UpdateCategoryInitAction' currentMenuGroup='4'/>
+    <action name='view_category' class='ViewCategoryAction' />
+    <action name='delete_category' class='DeleteCategoryAction' />
+    <action name='pdf_categories' class='PDFCategoriesAction' />
+    <action name='xls_categories' class='XlsCategoriesAction' />
+    
+    <action name='list_categories_to_send' class='ListCategoriesToSendAction'/>
+    
+    <forward name='add_category_success' url='doAction?action=list_categories' />
+    <forward name='add_category_error' url='doAction?action=add_category_init' />
+    <forward name='update_category_success' url='doAction?action=list_categories' />
+    <forward name='update_category_error' url='doAction?action=update_category_init' />
+    <forward name='delete_category_success' url='doAction?action=list_categories' />
+    <forward name='delete_category_error' url='doAction?action=list_categories' />
+    <forward name='list_category_error' url='doAction?action=list_categories' />
+	<forward name='pdf_category_error' url='doAction?action=list_categories' />
+	<forward name='xls_category_error' url='doAction?action=list_categories' />
+	
+	
+    <!-- contacts -->
+    <action name='list_contacts' class='ListContactsAction' currentMenuGroup='4'/>
+    <action name='add_contact' class='AddContactAction' />
+    <action name='add_contact_init' class='AddContactInitAction' currentMenuGroup='4'/>
+    <action name='update_contact' class='UpdateContactAction' />
+    <action name='update_contact_init' class='UpdateContactInitAction' currentMenuGroup='4'/>
+    <action name='view_contact' class='ViewContactAction' />
+    <action name='delete_contact' class='DeleteContactAction' />
+    <action name='pdf_contacts' class='PDFContactsAction' />
+    <action name='xls_contacts' class='XlsContactsAction' />
+    <action name='import_contact_init' class='ImportContactInitAction' currentMenuGroup='4'/>
+    <action name='import_contact' class='ImportContactAction' currentMenuGroup='4'/>
+    <action name='analysis_bounces' class='AnalysisBouncesAction' />
+    
+    <forward name='add_contact_success' url='doAction?action=list_contacts' />
+    <forward name='add_contact_error' url='doAction?action=add_contact_init' />
+    <forward name='update_contact_success' url='doAction?action=list_contacts' />
+    <forward name='update_contact_error' url='doAction?action=update_contact_init' />
+    <forward name='delete_contact_success' url='doAction?action=list_contacts' />
+    <forward name='delete_contact_error' url='doAction?action=list_contacts' />
+    <forward name='list_contact_error' url='doAction?action=list_contacts' />
+	<forward name='pdf_contact_error' url='doAction?action=list_contacts' />
+	<forward name='xls_contact_error' url='doAction?action=list_contacts' />
+	
+	
+    <!-- contactCategories -->
+    <action name='list_contactcategories' class='ListContactCategoriesAction'/>
+    <action name='add_contactcategory' class='AddContactCategoryAction' />
+    <action name='add_contactcategory_init' class='AddContactCategoryInitAction' />
+    <action name='update_contactcategory' class='UpdateContactCategoryAction' />
+    <action name='update_contactcategory_init' class='UpdateContactCategoryInitAction' />
+    <action name='view_contactcategory' class='ViewContactCategoryAction' />
+    <action name='delete_contactcategory' class='DeleteContactCategoryAction' />
+    <action name='pdf_contactcategories' class='PDFContactCategoriesAction' />
+    <action name='xls_contactcategories' class='XlsContactCategoriesAction' />
+    
+    <action name='contactcategory_process' class='ContactCategoryProcessAction'/>
+    
+    <forward name='add_contactcategory_success' url='doAction?action=list_contactcategories' />
+    <forward name='add_contactcategory_error' url='doAction?action=add_contactcategory_init' />
+    <forward name='update_contactcategory_success' url='doAction?action=list_contactcategories' />
+    <forward name='update_contactcategory_error' url='doAction?action=update_contactcategory_init' />
+    <forward name='delete_contactcategory_success' url='doAction?action=list_contactcategories' />
+    <forward name='delete_contactcategory_error' url='doAction?action=list_contactcategories' />
+    <forward name='list_contactcategory_error' url='doAction?action=list_contactcategories' />
+	<forward name='pdf_contactcategory_error' url='doAction?action=list_contactcategories' />
+	<forward name='xls_contactcategory_error' url='doAction?action=list_contactcategories' />
+	
+	<forward name='contactcategory_process_success' url='doAction?action=list_categories' />
+	<forward name='contactcategory_process_error' url='doAction?action=list_categories' />
+	
+    <!-- contactSendingNewsletters -->
+    <action name='list_contactsendingnewsletters' class='ListContactSendingNewslettersAction' currentMenuGroup='5'/>
+    <action name='add_contactsendingnewsletter' class='AddContactSendingNewsletterAction' />
+    <action name='add_contactsendingnewsletter_init' class='AddContactSendingNewsletterInitAction' />
+    <action name='update_contactsendingnewsletter' class='UpdateContactSendingNewsletterAction' />
+    <action name='update_contactsendingnewsletter_init' class='UpdateContactSendingNewsletterInitAction' />
+    <action name='view_contactsendingnewsletter' class='ViewContactSendingNewsletterAction' />
+    <action name='delete_contactsendingnewsletter' class='DeleteContactSendingNewsletterAction' />
+    <action name='pdf_contactsendingnewsletters' class='PDFContactSendingNewslettersAction' />
+    <action name='xls_contactsendingnewsletters' class='XlsContactSendingNewslettersAction' />
+    
+    <action name='opening_count' class='OpeningCountAction'/>
+    
+    <forward name='add_contactsendingnewsletter_success' url='doAction?action=list_contactsendingnewsletters' />
+    <forward name='add_contactsendingnewsletter_error' url='doAction?action=add_contactsendingnewsletter_init' />
+    <forward name='update_contactsendingnewsletter_success' url='doAction?action=list_contactsendingnewsletters' />
+    <forward name='update_contactsendingnewsletter_error' url='doAction?action=update_contactsendingnewsletter_init' />
+    <forward name='delete_contactsendingnewsletter_success' url='doAction?action=list_contactsendingnewsletters' />
+    <forward name='delete_contactsendingnewsletter_error' url='doAction?action=list_contactsendingnewsletters' />
+    <forward name='list_contactsendingnewsletter_error' url='doAction?action=list_contactsendingnewsletters' />
+	<forward name='pdf_contactsendingnewsletter_error' url='doAction?action=list_contactsendingnewsletters' />
+	<forward name='xls_contactsendingnewsletter_error' url='doAction?action=list_contactsendingnewsletters' />
+	
+	
+    <!-- images -->
+    <action name='list_images' class='ListImagesAction' currentMenuGroup='10'/>
+    <action name='add_image' class='AddImageAction' />
+    <action name='add_image_init' class='AddImageInitAction' />
+    <action name='update_image' class='UpdateImageAction' />
+    <action name='update_image_init' class='UpdateImageInitAction' />
+    <action name='view_image' class='ViewImageAction' />
+    <action name='delete_image' class='DeleteImageAction' />
+    <action name='pdf_images' class='PDFImagesAction' />
+    <action name='xls_images' class='XlsImagesAction' />
+    
+    <forward name='add_image_success' url='doAction?action=list_images' />
+    <forward name='add_image_error' url='doAction?action=add_image_init' />
+    <forward name='update_image_success' url='doAction?action=list_images' />
+    <forward name='update_image_error' url='doAction?action=update_image_init' />
+    <forward name='delete_image_success' url='doAction?action=list_images' />
+    <forward name='delete_image_error' url='doAction?action=list_images' />
+    <forward name='list_image_error' url='doAction?action=list_images' />
+	<forward name='pdf_image_error' url='doAction?action=list_images' />
+	<forward name='xls_image_error' url='doAction?action=list_images' />
+	
+	
+    <!-- imageCategories -->
+    <action name='list_imagecategories' class='ListImageCategoriesAction' currentMenuGroup='10'/>
+    <action name='add_imagecategory' class='AddImageCategoryAction' />
+    <action name='add_imagecategory_init' class='AddImageCategoryInitAction' />
+    <action name='update_imagecategory' class='UpdateImageCategoryAction' />
+    <action name='update_imagecategory_init' class='UpdateImageCategoryInitAction' />
+    <action name='view_imagecategory' class='ViewImageCategoryAction' />
+    <action name='delete_imagecategory' class='DeleteImageCategoryAction' />
+    <action name='pdf_imagecategories' class='PDFImageCategoriesAction' />
+    <action name='xls_imagecategories' class='XlsImageCategoriesAction' />
+    
+    <forward name='add_imagecategory_success' url='doAction?action=list_imagecategories' />
+    <forward name='add_imagecategory_error' url='doAction?action=add_imagecategory_init' />
+    <forward name='update_imagecategory_success' url='doAction?action=list_imagecategories' />
+    <forward name='update_imagecategory_error' url='doAction?action=update_imagecategory_init' />
+    <forward name='delete_imagecategory_success' url='doAction?action=list_imagecategories' />
+    <forward name='delete_imagecategory_error' url='doAction?action=list_imagecategories' />
+    <forward name='list_imagecategory_error' url='doAction?action=list_imagecategories' />
+	<forward name='pdf_imagecategory_error' url='doAction?action=list_imagecategories' />
+	<forward name='xls_imagecategory_error' url='doAction?action=list_imagecategories' />
+	
+	<!-- items -->
+    <action name='list_items' class='ListItemsAction' currentMenuGroup='5'/>
+    <action name='add_item' class='AddItemAction' />
+    <action name='add_item_init' class='AddItemInitAction' currentMenuGroup='5'/>
+    <action name='update_item' class='UpdateItemAction' />
+    <action name='update_item_init' class='UpdateItemInitAction' currentMenuGroup='5'/>
+    <action name='view_item' class='ViewItemAction' />
+    <action name='delete_item' class='DeleteItemAction' />
+    <action name='pdf_items' class='PDFItemsAction' />
+    <action name='xls_items' class='XlsItemsAction' />
+    
+    <forward name='add_item_success' url='doAction?action=list_items' />
+    <forward name='add_item_error' url='doAction?action=add_item_init' />
+    <forward name='update_item_success' url='doAction?action=list_items' />
+    <forward name='update_item_error' url='doAction?action=update_item_init' />
+    <forward name='delete_item_success' url='doAction?action=list_items' />
+    <forward name='delete_item_error' url='doAction?action=list_items' />
+    <forward name='list_item_error' url='doAction?action=list_items' />
+	<forward name='pdf_item_error' url='doAction?action=list_items' />
+	<forward name='xls_item_error' url='doAction?action=list_items' />
+	
+	
+    <!-- newsletters -->
+    <action name='list_newsletters' class='ListNewslettersAction' currentMenuGroup='5'/>
+    <action name='add_newsletter' class='AddNewsletterAction' />
+    <action name='add_newsletter_init' class='AddNewsletterInitAction' currentMenuGroup='5'/>
+    <action name='update_newsletter' class='UpdateNewsletterAction' />
+    <action name='update_newsletter_init' class='UpdateNewsletterInitAction' currentMenuGroup='5'/>
+    <action name='view_newsletter' class='ViewNewsletterAction' />
+    <action name='delete_newsletter' class='DeleteNewsletterAction' />
+    <action name='pdf_newsletters' class='PDFNewslettersAction' />
+    <action name='xls_newsletters' class='XlsNewslettersAction' />
+    
+    <forward name='add_newsletter_success' url='doAction?action=list_newsletters' />
+    <forward name='add_newsletter_error' url='doAction?action=add_newsletter_init' />
+    <forward name='update_newsletter_success' url='doAction?action=list_newsletters' />
+    <forward name='update_newsletter_error' url='doAction?action=update_newsletter_init' />
+    <forward name='delete_newsletter_success' url='doAction?action=list_newsletters' />
+    <forward name='delete_newsletter_error' url='doAction?action=list_newsletters' />
+    <forward name='list_newsletter_error' url='doAction?action=list_newsletters' />
+	<forward name='pdf_newsletter_error' url='doAction?action=list_newsletters' />
+	<forward name='xls_newsletter_error' url='doAction?action=list_newsletters' />
+	<forward name='add_newsletter_temp' url='doAction?action=add_newsletter_init' />
+	
+    <!-- newsletterImages -->
+    <action name='list_newsletterimages' class='ListNewsletterImagesAction' currentMenuGroup='10'/>
+    <action name='add_newsletterimage' class='AddNewsletterImageAction' />
+    <action name='add_newsletterimage_init' class='AddNewsletterImageInitAction' />
+    <action name='update_newsletterimage' class='UpdateNewsletterImageAction' />
+    <action name='update_newsletterimage_init' class='UpdateNewsletterImageInitAction' />
+    <action name='view_newsletterimage' class='ViewNewsletterImageAction' />
+    <action name='delete_newsletterimage' class='DeleteNewsletterImageAction' />
+    <action name='pdf_newsletterimages' class='PDFNewsletterImagesAction' />
+    <action name='xls_newsletterimages' class='XlsNewsletterImagesAction' />
+    
+    <forward name='add_newsletterimage_success' url='doAction?action=list_newsletters' />
+    <forward name='add_newsletterimage_error' url='doAction?action=add_newsletterimage_init' />
+    <forward name='update_newsletterimage_success' url='doAction?action=list_newsletterimages' />
+    <forward name='update_newsletterimage_error' url='doAction?action=update_newsletterimage_init' />
+    <forward name='delete_newsletterimage_success' url='doAction?action=list_newsletterimages' />
+    <forward name='delete_newsletterimage_error' url='doAction?action=list_newsletterimages' />
+    <forward name='list_newsletterimage_error' url='doAction?action=list_newsletterimages' />
+	<forward name='pdf_newsletterimage_error' url='doAction?action=list_newsletterimages' />
+	<forward name='xls_newsletterimage_error' url='doAction?action=list_newsletterimages' />
+	
+	
+    <!-- sendingNewsletters -->
+    <action name='list_sendingnewsletters' class='ListSendingNewslettersAction' currentMenuGroup='5'/>
+    <action name='add_sendingnewsletter' class='AddSendingNewsletterAction' />
+    <action name='add_sendingnewsletter_init' class='AddSendingNewsletterInitAction' />
+    <action name='update_sendingnewsletter' class='UpdateSendingNewsletterAction' />
+    <action name='update_sendingnewsletter_init' class='UpdateSendingNewsletterInitAction' />
+    <action name='view_sendingnewsletter' class='ViewSendingNewsletterAction' />
+    <action name='delete_sendingnewsletter' class='DeleteSendingNewsletterAction' />
+    <action name='pdf_sendingnewsletters' class='PDFSendingNewslettersAction' />
+    <action name='xls_sendingnewsletters' class='XlsSendingNewslettersAction' />
+    
+    <action name='sending_process' class='SendingProcessAction'/>
+    <action name='send_newsletters' class='SendNewslettersAction'/>
+    
+    <forward name='add_sendingnewsletter_success' url='doAction?action=list_sendingnewsletters' />
+    <forward name='add_sendingnewsletter_error' url='doAction?action=add_sendingnewsletter_init' />
+    <forward name='update_sendingnewsletter_success' url='doAction?action=list_sendingnewsletters' />
+    <forward name='update_sendingnewsletter_error' url='doAction?action=update_sendingnewsletter_init' />
+    <forward name='delete_sendingnewsletter_success' url='doAction?action=list_sendingnewsletters' />
+    <forward name='delete_sendingnewsletter_error' url='doAction?action=list_sendingnewsletters' />
+    <forward name='list_sendingnewsletter_error' url='doAction?action=list_sendingnewsletters' />
+	<forward name='pdf_sendingnewsletter_error' url='doAction?action=list_sendingnewsletters' />
+	<forward name='xls_sendingnewsletter_error' url='doAction?action=list_sendingnewsletters' />
+		
+	<forward name='sending_process_success' url='doAction?action=send_newsletters' />
+	<forward name='send_newsletters_success' url='doAction?action=list_newsletters' />
+	
+	
+    <!-- states -->
+    <action name='list_states' class='ListStatesAction' currentMenuGroup='4'/>
+    <action name='add_status' class='AddStatusAction' />
+    <action name='add_status_init' class='AddStatusInitAction' currentMenuGroup='4'/>
+    <action name='update_status' class='UpdateStatusAction' />
+    <action name='update_status_init' class='UpdateStatusInitAction' currentMenuGroup='4'/>
+    <action name='view_status' class='ViewStatusAction' />
+    <action name='delete_status' class='DeleteStatusAction' />
+    <action name='pdf_states' class='PDFStatesAction' />
+    <action name='xls_states' class='XlsStatesAction' />
+    
+    <forward name='add_status_success' url='doAction?action=list_states' />
+    <forward name='add_status_error' url='doAction?action=add_status_init' />
+    <forward name='update_status_success' url='doAction?action=list_states' />
+    <forward name='update_status_error' url='doAction?action=update_status_init' />
+    <forward name='delete_status_success' url='doAction?action=list_states' />
+    <forward name='delete_status_error' url='doAction?action=list_states' />
+    <forward name='list_status_error' url='doAction?action=list_states' />
+	<forward name='pdf_status_error' url='doAction?action=list_states' />
+	<forward name='xls_status_error' url='doAction?action=list_states' />
+	
+	
+    <!-- templates -->
+    <action name='list_templates' class='ListTemplatesAction' currentMenuGroup='10'/>
+    <action name='add_template' class='AddTemplateAction' />
+    <action name='add_template_init' class='AddTemplateInitAction' />
+    <action name='update_template' class='UpdateTemplateAction' />
+    <action name='update_template_init' class='UpdateTemplateInitAction' />
+    <action name='view_template' class='ViewTemplateAction' />
+    <action name='like_button' class='LikeButtonAction' />
+    <action name='delete_template' class='DeleteTemplateAction' />
+    <action name='pdf_templates' class='PDFTemplatesAction' />
+    <action name='xls_templates' class='XlsTemplatesAction' />
+    
+    <forward name='add_template_success' url='doAction?action=list_templates' />
+    <forward name='add_template_error' url='doAction?action=add_template_init' />
+    <forward name='update_template_success' url='doAction?action=list_templates' />
+    <forward name='update_template_error' url='doAction?action=update_template_init' />
+    <forward name='delete_template_success' url='doAction?action=list_templates' />
+    <forward name='delete_template_error' url='doAction?action=list_templates' />
+    <forward name='list_template_error' url='doAction?action=list_templates' />
+	<forward name='pdf_template_error' url='doAction?action=list_templates' />
+	<forward name='xls_template_error' url='doAction?action=list_templates' />
+	
+	
+    <!-- cdt_action_functions -->
+    <action name='list_cdt_action_functions' class='ListCdt_action_functionsAction' currentMenuGroup='10'/>
+    <action name='add_cdt_action_function' class='AddCdt_action_functionAction' />
+    <action name='add_cdt_action_function_init' class='AddCdt_action_functionInitAction' />
+    <action name='update_cdt_action_function' class='UpdateCdt_action_functionAction' />
+    <action name='update_cdt_action_function_init' class='UpdateCdt_action_functionInitAction' />
+    <action name='view_cdt_action_function' class='ViewCdt_action_functionAction' />
+    <action name='delete_cdt_action_function' class='DeleteCdt_action_functionAction' />
+    <action name='pdf_cdt_action_functions' class='PDFCdt_action_functionsAction' />
+    <action name='xls_cdt_action_functions' class='XlsCdt_action_functionsAction' />
+    
+    <forward name='add_cdt_action_function_success' url='doAction?action=list_cdt_action_functions' />
+    <forward name='add_cdt_action_function_error' url='doAction?action=add_cdt_action_function_init' />
+    <forward name='update_cdt_action_function_success' url='doAction?action=list_cdt_action_functions' />
+    <forward name='update_cdt_action_function_error' url='doAction?action=update_cdt_action_function_init' />
+    <forward name='delete_cdt_action_function_success' url='doAction?action=list_cdt_action_functions' />
+    <forward name='delete_cdt_action_function_error' url='doAction?action=list_cdt_action_functions' />
+    <forward name='list_cdt_action_function_error' url='doAction?action=list_cdt_action_functions' />
+	<forward name='pdf_cdt_action_function_error' url='doAction?action=list_cdt_action_functions' />
+	<forward name='xls_cdt_action_function_error' url='doAction?action=list_cdt_action_functions' />
+	
+	
+    <!-- cdt_functions -->
+    <action name='list_cdt_functions' class='ListCdt_functionsAction' currentMenuGroup='10'/>
+    <action name='add_cdt_function' class='AddCdt_functionAction' />
+    <action name='add_cdt_function_init' class='AddCdt_functionInitAction' />
+    <action name='update_cdt_function' class='UpdateCdt_functionAction' />
+    <action name='update_cdt_function_init' class='UpdateCdt_functionInitAction' />
+    <action name='view_cdt_function' class='ViewCdt_functionAction' />
+    <action name='delete_cdt_function' class='DeleteCdt_functionAction' />
+    <action name='pdf_cdt_functions' class='PDFCdt_functionsAction' />
+    <action name='xls_cdt_functions' class='XlsCdt_functionsAction' />
+    
+    <forward name='add_cdt_function_success' url='doAction?action=list_cdt_functions' />
+    <forward name='add_cdt_function_error' url='doAction?action=add_cdt_function_init' />
+    <forward name='update_cdt_function_success' url='doAction?action=list_cdt_functions' />
+    <forward name='update_cdt_function_error' url='doAction?action=update_cdt_function_init' />
+    <forward name='delete_cdt_function_success' url='doAction?action=list_cdt_functions' />
+    <forward name='delete_cdt_function_error' url='doAction?action=list_cdt_functions' />
+    <forward name='list_cdt_function_error' url='doAction?action=list_cdt_functions' />
+	<forward name='pdf_cdt_function_error' url='doAction?action=list_cdt_functions' />
+	<forward name='xls_cdt_function_error' url='doAction?action=list_cdt_functions' />
+	
+	
+    <!-- cdt_menugroups -->
+    <action name='list_cdt_menugroups' class='ListCdt_menugroupsAction' currentMenuGroup='10'/>
+    <action name='add_cdt_menugroup' class='AddCdt_menugroupAction' />
+    <action name='add_cdt_menugroup_init' class='AddCdt_menugroupInitAction' />
+    <action name='update_cdt_menugroup' class='UpdateCdt_menugroupAction' />
+    <action name='update_cdt_menugroup_init' class='UpdateCdt_menugroupInitAction' />
+    <action name='view_cdt_menugroup' class='ViewCdt_menugroupAction' />
+    <action name='delete_cdt_menugroup' class='DeleteCdt_menugroupAction' />
+    <action name='pdf_cdt_menugroups' class='PDFCdt_menugroupsAction' />
+    <action name='xls_cdt_menugroups' class='XlsCdt_menugroupsAction' />
+    
+    <forward name='add_cdt_menugroup_success' url='doAction?action=list_cdt_menugroups' />
+    <forward name='add_cdt_menugroup_error' url='doAction?action=add_cdt_menugroup_init' />
+    <forward name='update_cdt_menugroup_success' url='doAction?action=list_cdt_menugroups' />
+    <forward name='update_cdt_menugroup_error' url='doAction?action=update_cdt_menugroup_init' />
+    <forward name='delete_cdt_menugroup_success' url='doAction?action=list_cdt_menugroups' />
+    <forward name='delete_cdt_menugroup_error' url='doAction?action=list_cdt_menugroups' />
+    <forward name='list_cdt_menugroup_error' url='doAction?action=list_cdt_menugroups' />
+	<forward name='pdf_cdt_menugroup_error' url='doAction?action=list_cdt_menugroups' />
+	<forward name='xls_cdt_menugroup_error' url='doAction?action=list_cdt_menugroups' />
+	
+	
+    <!-- cdt_menuoptions -->
+    <action name='list_cdt_menuoptions' class='ListCdt_menuoptionsAction' currentMenuGroup='10'/>
+    <action name='add_cdt_menuoption' class='AddCdt_menuoptionAction' />
+    <action name='add_cdt_menuoption_init' class='AddCdt_menuoptionInitAction' />
+    <action name='update_cdt_menuoption' class='UpdateCdt_menuoptionAction' />
+    <action name='update_cdt_menuoption_init' class='UpdateCdt_menuoptionInitAction' />
+    <action name='view_cdt_menuoption' class='ViewCdt_menuoptionAction' />
+    <action name='delete_cdt_menuoption' class='DeleteCdt_menuoptionAction' />
+    <action name='pdf_cdt_menuoptions' class='PDFCdt_menuoptionsAction' />
+    <action name='xls_cdt_menuoptions' class='XlsCdt_menuoptionsAction' />
+    
+    <forward name='add_cdt_menuoption_success' url='doAction?action=list_cdt_menuoptions' />
+    <forward name='add_cdt_menuoption_error' url='doAction?action=add_cdt_menuoption_init' />
+    <forward name='update_cdt_menuoption_success' url='doAction?action=list_cdt_menuoptions' />
+    <forward name='update_cdt_menuoption_error' url='doAction?action=update_cdt_menuoption_init' />
+    <forward name='delete_cdt_menuoption_success' url='doAction?action=list_cdt_menuoptions' />
+    <forward name='delete_cdt_menuoption_error' url='doAction?action=list_cdt_menuoptions' />
+    <forward name='list_cdt_menuoption_error' url='doAction?action=list_cdt_menuoptions' />
+	<forward name='pdf_cdt_menuoption_error' url='doAction?action=list_cdt_menuoptions' />
+	<forward name='xls_cdt_menuoption_error' url='doAction?action=list_cdt_menuoptions' />
+	
+	
+    <!-- cdt_registrations -->
+    <action name='list_cdt_registrations' class='ListCdt_registrationsAction' currentMenuGroup='10'/>
+    <action name='add_cdt_registration' class='AddCdt_registrationAction' />
+    <action name='add_cdt_registration_init' class='AddCdt_registrationInitAction' />
+    <action name='update_cdt_registration' class='UpdateCdt_registrationAction' />
+    <action name='update_cdt_registration_init' class='UpdateCdt_registrationInitAction' />
+    <action name='view_cdt_registration' class='ViewCdt_registrationAction' />
+    <action name='delete_cdt_registration' class='DeleteCdt_registrationAction' />
+    <action name='pdf_cdt_registrations' class='PDFCdt_registrationsAction' />
+    <action name='xls_cdt_registrations' class='XlsCdt_registrationsAction' />
+    
+    <forward name='add_cdt_registration_success' url='doAction?action=list_cdt_registrations' />
+    <forward name='add_cdt_registration_error' url='doAction?action=add_cdt_registration_init' />
+    <forward name='update_cdt_registration_success' url='doAction?action=list_cdt_registrations' />
+    <forward name='update_cdt_registration_error' url='doAction?action=update_cdt_registration_init' />
+    <forward name='delete_cdt_registration_success' url='doAction?action=list_cdt_registrations' />
+    <forward name='delete_cdt_registration_error' url='doAction?action=list_cdt_registrations' />
+    <forward name='list_cdt_registration_error' url='doAction?action=list_cdt_registrations' />
+	<forward name='pdf_cdt_registration_error' url='doAction?action=list_cdt_registrations' />
+	<forward name='xls_cdt_registration_error' url='doAction?action=list_cdt_registrations' />
+	
+	
+    <!-- cdt_users -->
+    <action name='list_cdt_users' class='ListCdt_usersAction' currentMenuGroup='10'/>
+    <action name='add_cdt_user' class='AddCdt_userAction' />
+    <action name='add_cdt_user_init' class='AddCdt_userInitAction' />
+    <action name='update_cdt_user' class='UpdateCdt_userAction' />
+    <action name='update_cdt_user_init' class='UpdateCdt_userInitAction' />
+    <action name='view_cdt_user' class='ViewCdt_userAction' />
+    <action name='delete_cdt_user' class='DeleteCdt_userAction' />
+    <action name='pdf_cdt_users' class='PDFCdt_usersAction' />
+    <action name='xls_cdt_users' class='XlsCdt_usersAction' />
+    
+    <forward name='add_cdt_user_success' url='doAction?action=list_cdt_users' />
+    <forward name='add_cdt_user_error' url='doAction?action=add_cdt_user_init' />
+    <forward name='update_cdt_user_success' url='doAction?action=list_cdt_users' />
+    <forward name='update_cdt_user_error' url='doAction?action=update_cdt_user_init' />
+    <forward name='delete_cdt_user_success' url='doAction?action=list_cdt_users' />
+    <forward name='delete_cdt_user_error' url='doAction?action=list_cdt_users' />
+    <forward name='list_cdt_user_error' url='doAction?action=list_cdt_users' />
+	<forward name='pdf_cdt_user_error' url='doAction?action=list_cdt_users' />
+	<forward name='xls_cdt_user_error' url='doAction?action=list_cdt_users' />
+	
+	
+    <!-- cdt_usergroups -->
+    <action name='list_cdt_usergroups' class='ListCdt_usergroupsAction' currentMenuGroup='10'/>
+    <action name='add_cdt_usergroup' class='AddCdt_usergroupAction' />
+    <action name='add_cdt_usergroup_init' class='AddCdt_usergroupInitAction' />
+    <action name='update_cdt_usergroup' class='UpdateCdt_usergroupAction' />
+    <action name='update_cdt_usergroup_init' class='UpdateCdt_usergroupInitAction' />
+    <action name='view_cdt_usergroup' class='ViewCdt_usergroupAction' />
+    <action name='delete_cdt_usergroup' class='DeleteCdt_usergroupAction' />
+    <action name='pdf_cdt_usergroups' class='PDFCdt_usergroupsAction' />
+    <action name='xls_cdt_usergroups' class='XlsCdt_usergroupsAction' />
+    
+    <forward name='add_cdt_usergroup_success' url='doAction?action=list_cdt_usergroups' />
+    <forward name='add_cdt_usergroup_error' url='doAction?action=add_cdt_usergroup_init' />
+    <forward name='update_cdt_usergroup_success' url='doAction?action=list_cdt_usergroups' />
+    <forward name='update_cdt_usergroup_error' url='doAction?action=update_cdt_usergroup_init' />
+    <forward name='delete_cdt_usergroup_success' url='doAction?action=list_cdt_usergroups' />
+    <forward name='delete_cdt_usergroup_error' url='doAction?action=list_cdt_usergroups' />
+    <forward name='list_cdt_usergroup_error' url='doAction?action=list_cdt_usergroups' />
+	<forward name='pdf_cdt_usergroup_error' url='doAction?action=list_cdt_usergroups' />
+	<forward name='xls_cdt_usergroup_error' url='doAction?action=list_cdt_usergroups' />
+	
+	
+    <!-- cdt_usergroup_functions -->
+    <action name='list_cdt_usergroup_functions' class='ListCdt_usergroup_functionsAction' currentMenuGroup='10'/>
+    <action name='add_cdt_usergroup_function' class='AddCdt_usergroup_functionAction' />
+    <action name='add_cdt_usergroup_function_init' class='AddCdt_usergroup_functionInitAction' />
+    <action name='update_cdt_usergroup_function' class='UpdateCdt_usergroup_functionAction' />
+    <action name='update_cdt_usergroup_function_init' class='UpdateCdt_usergroup_functionInitAction' />
+    <action name='view_cdt_usergroup_function' class='ViewCdt_usergroup_functionAction' />
+    <action name='delete_cdt_usergroup_function' class='DeleteCdt_usergroup_functionAction' />
+    <action name='pdf_cdt_usergroup_functions' class='PDFCdt_usergroup_functionsAction' />
+    <action name='xls_cdt_usergroup_functions' class='XlsCdt_usergroup_functionsAction' />
+    
+    <forward name='add_cdt_usergroup_function_success' url='doAction?action=list_cdt_usergroup_functions' />
+    <forward name='add_cdt_usergroup_function_error' url='doAction?action=add_cdt_usergroup_function_init' />
+    <forward name='update_cdt_usergroup_function_success' url='doAction?action=list_cdt_usergroup_functions' />
+    <forward name='update_cdt_usergroup_function_error' url='doAction?action=update_cdt_usergroup_function_init' />
+    <forward name='delete_cdt_usergroup_function_success' url='doAction?action=list_cdt_usergroup_functions' />
+    <forward name='delete_cdt_usergroup_function_error' url='doAction?action=list_cdt_usergroup_functions' />
+    <forward name='list_cdt_usergroup_function_error' url='doAction?action=list_cdt_usergroup_functions' />
+	<forward name='pdf_cdt_usergroup_function_error' url='doAction?action=list_cdt_usergroup_functions' />
+	<forward name='xls_cdt_usergroup_function_error' url='doAction?action=list_cdt_usergroup_functions' />
+	
+	<action name='edit_subscription' class='EditSubscriptionAction' currentMenuGroup='6'/>
+	<action name='edit_subscription_ajax' class='EditSubscriptionAjaxAction'/>
+	<action name='update_susbcription' class='UpdateSubscriptionAction'/>
+	<action name='view_subscription' class='ViewSubscriptionAction'/>
+	<action name='edit_unsubscribe_init' class='EditUnsubscribeInitAction'/>
+	<action name='edit_unsubscribe' class='EditUnsubscribeAction'/>
+	
+	<forward name='update_subscription_success' url='doAction?action=view_subscription' />
+    <forward name='update_subscription_error' url='doAction?action=view_subscription' />
+    
+    <forward name='update_unsubscribe_success' url='doAction?action=edit_unsubscribe_init' />
+    <forward name='update_unsubscribe_error' url='doAction?action=edit_unsubscribe_init' />
+	
+</navegation>
